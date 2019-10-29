@@ -1,0 +1,5 @@
+
+.vscode/c_cpp_properties.json
+Automata.o
+DFA2dot.o
+*.o
