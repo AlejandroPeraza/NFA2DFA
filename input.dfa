@@ -1,0 +1,37 @@
+// Universidad de La Laguna
+// Grado en Ingenieria Informatica
+// Computabilidad y Algoritmia
+//
+// Fichero de representacion de un DFA
+// Lenguaje reconocido: Cadenas binarias que representan numeros enteros divisibles por 3
+// ER: (1(01*0)*1|0)+
+//////////////////////////////////////
+// Alfabeto, N=cadenas, ~es la cadena vacía
+2
+~
+0
+1
+// Estados 
+5
+q0
+cero
+0mod3
+1mod3
+2mod3
+// Estado inicial, debe estar en estados
+q0
+// Estados de aceptación, han de estar en estados
+2
+cero
+0mod3
+// Transiciones, qi sim qf, qi y qf en estados
+// sim ha de estar en el alfabeto o ser ~
+8
+q0 0 cero
+q0 1 1mod3
+1mod3 0 2mod3
+1mod3 1 0mod3
+2mod3 0 1mod3
+2mod3 1 2mod3
+0mod3 0 0mod3
+0mod3 1 1mod3
