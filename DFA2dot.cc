@@ -47,7 +47,7 @@ int main (int argc, char *argv[]) {
   }
   if (input) {
     Automata test (input);
-    test.Dot(output);
+    //test.Dot(output);
     input.close();
   } 
   else std::cout << "Error en la apertura del fichero de entrada\n";

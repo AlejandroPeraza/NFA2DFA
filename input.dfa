@@ -11,21 +11,16 @@
 ~
 0
 1
-// Estados 
 5
 q0
 cero
 0mod3
 1mod3
 2mod3
-// Estado inicial, debe estar en estados
 q0
-// Estados de aceptación, han de estar en estados
 2
 cero
 0mod3
-// Transiciones, qi sim qf, qi y qf en estados
-// sim ha de estar en el alfabeto o ser ~
 8
 q0 0 cero
 q0 1 1mod3

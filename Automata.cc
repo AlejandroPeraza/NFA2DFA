@@ -21,7 +21,7 @@
 #include "Automata.h"
 #include "State.h"
 
-Automata::Automata (std::istream& is) : initial_state_()  {
+Automata::Automata (std::istream& is) : states_(), initial_state_(), final_states_(), alphabet_() {
   std::vector<std::string> read;
   std::string str, str2, str3;
   int option = 0;
@@ -34,14 +34,13 @@ Automata::Automata (std::istream& is) : initial_state_()  {
 
   int count = 1;
   int aux = std::stoi(read[0]);
-
-  for (int i = 0; i < aux; i++) {
-    alphabet_.push_back(read[i+1][0]);
+  // N+ 1 iterations
+  for (int i = 0; i <= aux; i++) {
+      alphabet_.push_back(read[i+1][0]);
   }
-
-  count += aux;
-  aux = std::stoi(read[count]);
   
+  count += aux + 1;
+  aux = std::stoi(read[count]);
   for (int i = 0; i < aux; i++) {
     State q (read[count + i + 1]);
     states_.push_back(q);
@@ -50,8 +49,7 @@ Automata::Automata (std::istream& is) : initial_state_()  {
   count+=aux + 1;
   initial_state_.setStr(read[count]);
   count++;
-
-  aux = read[count][0] - '0';
+  aux = std::stoi(read[count]);
   
   for (int i = 0; i < aux; i++) {
     State q (read[count + i + 1]);
@@ -90,6 +88,14 @@ Automata::Automata (std::istream& is) : initial_state_()  {
     str2.clear();
     str3.clear();
   }
+/*
+for (std::vector<char>::iterator it = alphabet_.begin(); it < alphabet_.end(); it++) {
+    std::cout << *it << '\n';
+  }
+  for (std::vector<State>::iterator it = states_.begin(); it < states_.end(); it++) {
+    std::cout << it->getStr() << '\n';
+  }
+*/
 }
 
 Automata::~Automata() {
