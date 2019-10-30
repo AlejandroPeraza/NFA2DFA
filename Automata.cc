@@ -89,15 +89,28 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
     str3.clear();
   }
 /*
-for (std::vector<char>::iterator it = alphabet_.begin(); it < alphabet_.end(); it++) {
+  for (std::vector<char>::iterator it = alphabet_.begin(); it < alphabet_.end(); it++) {
     std::cout << *it << '\n';
   }
+  std::cout << '\n';
+  std::cout << initial_state_.getStr()  << '\n';
+  std::cout << '\n';
+    for (std::vector<State>::iterator it = final_states_.begin(); it < final_states_.end(); it++) {
+    std::cout << it->getStr() << '\n';
+  }
+  std::cout << '\n';
   for (std::vector<State>::iterator it = states_.begin(); it < states_.end(); it++) {
     std::cout << it->getStr() << '\n';
   }
-*/
-}
+  std::cout << '\n';
+  */
+  std::set<State> T;
 
+  T.insert(states_[3]);
+  T.insert(states_[8]);
+  EClosure(T);
+}
+  
 Automata::~Automata() {
   states_.erase(states_.begin(), states_.end());
   final_states_.erase(final_states_.begin(), final_states_.end());
@@ -133,4 +146,11 @@ std::ostream& Automata::Dot (std::ostream& os) {
   }
   os << '}';
   return os;
+}
+
+std::set<State> Automata::EClosure (std::set<State> T) {
+  for (std::set<State>::iterator it = begin(T); it != end(T); it++) {
+    std::cout << it->getStr() << '\n';
+  }
+  return T;
 }

@@ -24,6 +24,7 @@
 
 #include <iostream>
 #include <vector>
+#include <set>
 #include "State.h"
 
 #ifndef AUTOMATA
@@ -55,6 +56,11 @@ class Automata {
    *  @return se devuelve por referncia el stream
    */
   std::ostream& Dot (std::ostream& os);
+  /** @brief Método  que obtiene los E-clausra estados de un estado
+   *  @param T - conjunto de estados sobre el que calcular
+   *  @return el conjunto de estados resultante
+   */
+  std::set<State> EClosure (std::set<State> T);
 
  private:
   std::vector<State> states_;

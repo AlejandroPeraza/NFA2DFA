@@ -43,7 +43,7 @@ class State {
   /** @brief Getter del atributo state_
    *  @return string que identifica a cada estado
    */
-  std::string getStr ();
+  std::string getStr () const;
   /** @brief Setter del atributo state_
    *  @param str - una string que modifica el valor de state_  
    */
@@ -61,9 +61,15 @@ class State {
   bool Equal (State &state) const;
   /** @brief Método que inserta un estado en el vector de transiciones
    *  @param token - un char   
-   *  @param q - un estado
+   *  @param q - un estado, objeto de la clase
    */
   void Insert(char token, State q);
+  /** @brief Sobrecarga del operador < para el correcto 
+   *  funcionamiento de un set
+   *  @param other - un estado, objeto de la clase
+   *  @return un booleano que indica si es menor o no
+   */
+  bool operator< (const State &other) const;
   
  private:
   std::string state_;

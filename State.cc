@@ -32,7 +32,7 @@ State::~State () {
   transitions_.erase(transitions_.begin(), transitions_.end());
 }
 
-std::string State::getStr () {
+std::string State::getStr () const {
   return state_;
 }
 
@@ -54,3 +54,8 @@ State State::Delta (char token) {
 void State::Insert (char token, State q) {
   transitions_.push_back(std::make_pair(q, token));
 }
+
+// TODO add friend
+bool State::operator< (const State &other) const { 
+  return state_ < other.getStr(); 
+  }  
