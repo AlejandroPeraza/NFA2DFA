@@ -20,6 +20,7 @@
 
 #include "Automata.h"
 #include "State.h"
+#include <stack>
 
 Automata::Automata (std::istream& is) : states_(), initial_state_(), final_states_(), alphabet_() {
   std::vector<std::string> read;
@@ -149,8 +150,15 @@ std::ostream& Automata::Dot (std::ostream& os) {
 }
 
 std::set<State> Automata::EClosure (std::set<State> T) {
+  std::stack<State> cl_stack;
+  std::set<State> epsilon_closure = T;
   for (std::set<State>::iterator it = begin(T); it != end(T); it++) {
-    std::cout << it->getStr() << '\n';
+    //std::cout << it->getStr() << '\n';
+    cl_stack.push(*it);
+  }
+  while(!cl_stack.empty()) {
+    std::cout << cl_stack.top().getStr() << '\n';
+    cl_stack.pop();
   }
   return T;
 }
