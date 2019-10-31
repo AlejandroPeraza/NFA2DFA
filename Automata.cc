@@ -22,6 +22,8 @@
 #include "State.h"
 #include <stack>
 
+typedef std::vector<std::pair<State, char>> vector_pair;
+
 Automata::Automata (std::istream& is) : states_(), initial_state_(), final_states_(), alphabet_() {
   std::vector<std::string> read;
   std::string str, str2, str3;
@@ -88,8 +90,12 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
     states_[FindPos(str2)].Insert(token, states_[FindPos(str3)]);
     str2.clear();
     str3.clear();
+  }/*
+  vector_pair v = states_[6].getTransitions();
+  for (vector_pair::iterator it = v.begin(); it < v.end(); it++) {
+    std::cout << it->first.getStr() << ' ' << it->second << '\n';
   }
-/*
+
   for (std::vector<char>::iterator it = alphabet_.begin(); it < alphabet_.end(); it++) {
     std::cout << *it << '\n';
   }
@@ -152,13 +158,27 @@ std::ostream& Automata::Dot (std::ostream& os) {
 std::set<State> Automata::EClosure (std::set<State> T) {
   std::stack<State> cl_stack;
   std::set<State> epsilon_closure = T;
+
   for (std::set<State>::iterator it = begin(T); it != end(T); it++) {
-    //std::cout << it->getStr() << '\n';
     cl_stack.push(*it);
   }
   while(!cl_stack.empty()) {
-    std::cout << cl_stack.top().getStr() << '\n';
+    // TODO make this shit prettier pls
+    State q = cl_stack.top();
     cl_stack.pop();
+    vector_pair tr = q.getTransitions();
+    for (vector_pair::iterator it = tr.begin(); it < tr.end(); it++) {
+      if (it->second == alphabet_[0] ) {
+        if (!epsilon_closure.count(it->first)) {
+          State aux = states_[FindPos(it->first.getStr())];
+          epsilon_closure.insert(aux);;
+          cl_stack.push(aux);
+        }
+      }
+    }
+  } 
+  for (std::set<State>::iterator it = begin(epsilon_closure); it != end(epsilon_closure); it++) {
+    std::cout << it->getStr() << '\n';
   }
-  return T;
+  return epsilon_closure;
 }

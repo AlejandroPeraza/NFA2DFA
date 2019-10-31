@@ -27,8 +27,10 @@
 #ifndef STATE
 #define STATE
 
+
 class State {
  public:
+  typedef std::vector<std::pair<State, char>> vector_pair;
   /// Constructor de la clase State por defecto 
   State ();
   /** @brief Constructor al recibir una string, esta es asignada a
@@ -48,6 +50,9 @@ class State {
    *  @param str - una string que modifica el valor de state_  
    */
   void setStr (std::string &str);
+  /**
+   */
+  vector_pair getTransitions () const;
   /** @brief Método que devuelve el estado siguiente dado un estado
    *  actual y un char
    * @param token - un char
@@ -70,10 +75,10 @@ class State {
    *  @return un booleano que indica si es menor o no
    */
   bool operator< (const State &other) const;
-  
+
  private:
   std::string state_;
-  std::vector<std::pair<State, char>> transitions_;
+  vector_pair transitions_;
 };
 
 #endif

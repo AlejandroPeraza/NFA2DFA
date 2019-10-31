@@ -20,6 +20,8 @@
 #include <iostream>
 #include "State.h"
 
+typedef std::vector<std::pair<State, char>> vector_pair;
+
 State::State () : state_(), transitions_() {
 
 }
@@ -36,9 +38,12 @@ std::string State::getStr () const {
   return state_;
 }
 
-
 void State::setStr (std::string &str) {
   state_ = str;
+}
+
+vector_pair State::getTransitions () const {
+  return transitions_;
 }
 
 State State::Delta (char token) {
@@ -49,6 +54,11 @@ State State::Delta (char token) {
     }
   }
   return dead;
+}
+// TODO delete Equal
+bool State::Equal (State &state) const{
+  if (state_ == state.getStr()) return 1;
+  else return 0;
 }
 
 void State::Insert (char token, State q) {
