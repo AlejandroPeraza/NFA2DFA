@@ -68,4 +68,4 @@ void State::Insert (char token, State q) {
 // TODO add friend
 bool State::operator< (const State &other) const { 
   return state_ < other.getStr(); 
-  }  
+}  
