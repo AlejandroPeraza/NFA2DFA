@@ -90,7 +90,8 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
     states_[FindPos(str2)].Insert(token, states_[FindPos(str3)]);
     str2.clear();
     str3.clear();
-  }/*
+  }
+  /*
   vector_pair v = states_[6].getTransitions();
   for (vector_pair::iterator it = v.begin(); it < v.end(); it++) {
     std::cout << it->first.getStr() << ' ' << it->second << '\n';
@@ -113,8 +114,8 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
   */
   std::set<State> T;
 
-  T.insert(states_[3]);
-  T.insert(states_[8]);
+  T.insert(states_[5]);
+  T.insert(states_[10]);
   EClosure(T);
 }
   
@@ -158,7 +159,6 @@ std::ostream& Automata::Dot (std::ostream& os) {
 std::set<State> Automata::EClosure (std::set<State> T) {
   std::stack<State> cl_stack;
   std::set<State> epsilon_closure = T;
-
   for (std::set<State>::iterator it = begin(T); it != end(T); it++) {
     cl_stack.push(*it);
   }
@@ -177,8 +177,8 @@ std::set<State> Automata::EClosure (std::set<State> T) {
       }
     }
   } 
-  for (std::set<State>::iterator it = begin(epsilon_closure); it != end(epsilon_closure); it++) {
+  /*for (std::set<State>::iterator it = begin(epsilon_closure); it != end(epsilon_closure); it++) {
     std::cout << it->getStr() << '\n';
-  }
+  }*/
   return epsilon_closure;
 }
