@@ -18,7 +18,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "Automata.h"
+#include "Nfa.h"
 
 int main (int argc, char *argv[]) {	
   std::ifstream input;
@@ -47,7 +47,6 @@ int main (int argc, char *argv[]) {
   }
   if (input) {
     Automata test (input);
-    //test.Dot(output);
     input.close();
   } 
   else std::cout << "Error en la apertura del fichero de entrada\n";

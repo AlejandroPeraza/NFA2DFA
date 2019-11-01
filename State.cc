@@ -22,11 +22,13 @@
 
 typedef std::vector<std::pair<State, char>> vector_pair;
 
-State::State () : state_(), transitions_() {
+State::State () : state_(), transitions_(), marked_() {
+  marked_ = 0;
 }
 
-State::State (std::string state) : state_(), transitions_() {
+State::State (std::string state) : state_(), transitions_(), marked_() {
   state_ = state;
+  marked_ = 0;
 }
 
 State::~State () {

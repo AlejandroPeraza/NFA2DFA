@@ -18,7 +18,7 @@
  *                       10/10/2019 - Creación (primera versión) del código
  */
 
-#include "Automata.h"
+#include "Nfa.h"
 #include "State.h"
 #include <stack>
 
@@ -95,7 +95,7 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
     str2.clear();
     str3.clear();
   } 
-  
+  // TODO remove the debugging
   /*
   vector_pair v = states_[6].getTransitions();
   for (vector_pair::iterator it = v.begin(); it < v.end(); it++) {
@@ -118,6 +118,7 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
   }
   std::cout << '\n';
   */
+  /*
   std::set<State> T;
   T.insert(states_[5]);
   T.insert(states_[10]);
@@ -135,9 +136,10 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
   T = Move(T, 'b');
 
 
-  for (std::set<State>::iterator it = begin(T); it != end(T); it++) {
-    std::cout << it->getStr() << '\n';
-  }
+  //for (std::set<State>::iterator it = begin(T); it != end(T); it++) {
+    //std::cout << it->getStr() << '\n';
+  //}
+  */
 }
   
 Automata::~Automata() {
@@ -209,8 +211,6 @@ std::set<State> Automata::Move (std::set<State> S, char token) {
   for (std::set<State>::iterator it = begin(aux); it != end(aux); it++) {
     cl_stack.push(*it);
   }
-
-
   // En la pila están actualmente los estados de la E Clausura de S
   while(!cl_stack.empty()) {
     // TODO make this shit prettier pls
@@ -228,3 +228,9 @@ std::set<State> Automata::Move (std::set<State> S, char token) {
   } 
   return moved;
 }
+
+//void Automata::SubSets (std::vector<State> &DFA_states) {
+  //std::set<State> q0;
+  //q0.insert(initial_state_);
+  //q0 = EClosure(q0);
+//}
