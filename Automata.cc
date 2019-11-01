@@ -113,10 +113,22 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
   std::cout << '\n';
   */
   std::set<State> T;
-
   T.insert(states_[5]);
   T.insert(states_[10]);
-  EClosure(T);
+  T = EClosure(T);
+  //for (std::set<State>::iterator it = begin(T); it != end(T); it++) {
+    //std::cout << it->getStr() << '\n';
+  //}
+  T.clear();
+  T.insert(states_[0]);
+  T.insert(states_[1]);
+  T.insert(states_[2]);
+  T.insert(states_[4]);
+  T.insert(states_[7]);
+  T = Move(T, 'b');
+  for (std::set<State>::iterator it = begin(T); it != end(T); it++) {
+    std::cout << it->getStr() << '\n';
+  }
 }
   
 Automata::~Automata() {
@@ -177,8 +189,33 @@ std::set<State> Automata::EClosure (std::set<State> T) {
       }
     }
   } 
-  /*for (std::set<State>::iterator it = begin(epsilon_closure); it != end(epsilon_closure); it++) {
-    std::cout << it->getStr() << '\n';
-  }*/
   return epsilon_closure;
+}
+
+std::set<State> Automata::Move (std::set<State> S, char token) {
+  std::stack<State> cl_stack;
+  std::set<State> aux;
+  aux = EClosure(S);
+  std::set<State> moved;
+  for (std::set<State>::iterator it = begin(aux); it != end(aux); it++) {
+    cl_stack.push(*it);
+  }
+
+
+  // En la pila están actualmente los estados de la E Clausura de S
+  while(!cl_stack.empty()) {
+    // TODO make this shit prettier pls
+    State q = cl_stack.top();
+    cl_stack.pop();
+    vector_pair tr = q.getTransitions();
+    for (vector_pair::iterator it = tr.begin(); it < tr.end(); it++) {
+      if (it->second == token ) {
+        if (!moved.count(it->first)) {
+          State aux_state = states_[FindPos(it->first.getStr())];
+          moved.insert(aux_state);
+        }
+      }
+    }
+  } 
+  return moved;
 }

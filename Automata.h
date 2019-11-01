@@ -61,6 +61,13 @@ class Automata {
    *  @return el conjunto de estados resultante
    */
   std::set<State> EClosure (std::set<State> T);
+  /** @brief Método que devuelve el conjunto de estados que pueden alcanzarse
+   *  desde el estado S con el símbolo de entrada token
+   *  @param S - estado desde el que se analizan las tranisiciones
+   *  @param token - símbolo de entrada
+   *  @return conjunto de estados correspondiente
+   */
+  std::set<State> Move (std::set<State> S, char token);
 
  private:
   std::vector<State> states_;
