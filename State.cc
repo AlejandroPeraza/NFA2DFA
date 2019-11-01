@@ -43,6 +43,15 @@ void State::setStr (std::string &str) {
   state_ = str;
 }
 
+bool State::getMark() const {
+  return marked_;
+}
+
+void State::setMark(bool mark) {
+  marked_ = mark;
+}
+
+
 vector_pair State::getTransitions () const {
   return transitions_;
 }

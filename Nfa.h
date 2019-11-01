@@ -26,22 +26,23 @@
 #include <vector>
 #include <set>
 #include "State.h"
+#include "Dfa.h"
 
-#ifndef AUTOMATA
-#define AUTOMATA
+#ifndef NFA
+#define NFA
 
-class Automata {
+class Nfa {
  public:
   /** @brief Constructor de la clase Autómata que lee el contenido de un fichero
    *  y crea un DFA 
    *  @param is - fichero del que se lee los datos del DFA por referencia
    */
-  Automata (std::istream& is);
+  Nfa (std::istream& is);
 
   /** @brief Destructor de la clase Autómata que libera la memoria reservada por
    *  los vectores states_, final_states_ y alphabet_ 
    */
-  ~Automata();
+  ~Nfa();
 
   /** @brief Método que recorre el vecor states_ que contiene los estados
    *  y devuelve la posición en la que encuentra la string buscada
@@ -71,7 +72,7 @@ class Automata {
   /** @brief Método que aplica el algoritmo de construcción de suconjuntos
    *  @param DFA_states - el conjunto de estados del DFA correspondiente
    */
-  void SubSets (std::vector<State> &DFA_states);
+  void SubSets (Dfa &DFA);
   
  private:
   std::vector<State> states_;

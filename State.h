@@ -50,8 +50,16 @@ class State {
    *  @param str - una string que modifica el valor de state_  
    */
   void setStr (std::string &str);
-  /**
+  
+  /** @brief Método que devuelve el atributo marked_
+   *  @return booleano que indica si el estado está o no marcado
    */
+  bool getMark() const;
+  /** @brief Método que mopdiifca el atributo marked_
+   *  @param mark - 1 ó 0 para marcar o desmarcar el estado
+   */
+  void setMark(bool mark);
+  //TODO 
   vector_pair getTransitions () const;
   /** @brief Método que devuelve el estado siguiente dado un estado
    *  actual y un char

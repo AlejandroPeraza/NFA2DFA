@@ -7,7 +7,7 @@
  *  Autor: Alejandro Peraza González
  *  Correo: alu0101211770@ull.edu.es
  *  Fecha: 16/10/2019
- *  Archivo Automata.cc: Esta es la clase principal y la que inicializa el
+ *  Archivo Nfa.cc: Esta es la clase principal y la que inicializa el
  *                       funcionamiento del autómata y requiere de la 
  *                       creación de States, un alfabeto y una matriz
  *                       de transiciones
@@ -19,12 +19,13 @@
  */
 
 #include "Nfa.h"
+#include "Dfa.h"
 #include "State.h"
 #include <stack>
 
 typedef std::vector<std::pair<State, char>> vector_pair;
 
-Automata::Automata (std::istream& is) : states_(), initial_state_(), final_states_(), alphabet_() {
+Nfa::Nfa (std::istream& is) : states_(), initial_state_(), final_states_(), alphabet_() {
   std::vector<std::string> read;
   std::string str, str2, str3;
   int option = 0;
@@ -45,12 +46,9 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
   
   count += aux + 1;
   aux = std::stoi(read[count]);
-  //std::cout << aux << '\n';
   for (int i = 0; i < aux; i++) {
-    //std::cout << read[count + i + 1] << std::endl;
     State q (read[count + i + 1]);
     states_.push_back(q);
-    //std::cout << states_[i].getStr() << '\n';
   }
 
   count+=aux + 1;
@@ -128,34 +126,36 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
     //std::cout << it->getStr() << '\n';
   //}
   T.clear();
-  T.insert(states_[0]);
   T.insert(states_[1]);
   T.insert(states_[2]);
   T.insert(states_[4]);
+  T.insert(states_[5]);
+  T.insert(states_[6]);
   T.insert(states_[7]);
+  T.insert(states_[9]);
   T = Move(T, 'b');
 
 
-  //for (std::set<State>::iterator it = begin(T); it != end(T); it++) {
-    //std::cout << it->getStr() << '\n';
-  //}
+  for (std::set<State>::iterator it = begin(T); it != end(T); it++) {
+    std::cout << it->getStr() << '\n';
+  }
   */
 }
   
-Automata::~Automata() {
+Nfa::~Nfa() {
   states_.erase(states_.begin(), states_.end());
   final_states_.erase(final_states_.begin(), final_states_.end());
   alphabet_.erase(alphabet_.begin(), alphabet_.end());
 }
 
-int Automata::FindPos (std::string str) {
+int Nfa::FindPos (std::string str) {
     for (std::size_t i = 0; i < states_.size(); i++){
       if (states_[i].getStr() == str) return i;
     }
   return -1;
 }
 
-std::ostream& Automata::Dot (std::ostream& os) {
+std::ostream& Nfa::Dot (std::ostream& os) {
   os << "digraph DFA {\n  rankdir=LR;\n  size =  \"10 , 4\";\n";
   os << "  d2tstyleonly = true;\n  node [shape = none]; \" \";\n";
   os << "  node [shape = doublecircle];";
@@ -179,7 +179,7 @@ std::ostream& Automata::Dot (std::ostream& os) {
   return os;
 }
 
-std::set<State> Automata::EClosure (std::set<State> T) {
+std::set<State> Nfa::EClosure (std::set<State> T) {
   std::stack<State> cl_stack;
   std::set<State> epsilon_closure = T;
   for (std::set<State>::iterator it = begin(T); it != end(T); it++) {
@@ -203,12 +203,10 @@ std::set<State> Automata::EClosure (std::set<State> T) {
   return epsilon_closure;
 }
 
-std::set<State> Automata::Move (std::set<State> S, char token) {
+std::set<State> Nfa::Move (std::set<State> S, char token) {
   std::stack<State> cl_stack;
-  std::set<State> aux;
-  aux = EClosure(S);
   std::set<State> moved;
-  for (std::set<State>::iterator it = begin(aux); it != end(aux); it++) {
+  for (std::set<State>::iterator it = begin(S); it != end(S); it++) {
     cl_stack.push(*it);
   }
   // En la pila están actualmente los estados de la E Clausura de S
@@ -229,8 +227,12 @@ std::set<State> Automata::Move (std::set<State> S, char token) {
   return moved;
 }
 
-//void Automata::SubSets (std::vector<State> &DFA_states) {
-  //std::set<State> q0;
-  //q0.insert(initial_state_);
-  //q0 = EClosure(q0);
-//}
+void Nfa::SubSets (Dfa &DFA) {
+  //int id = 0;
+  //State q (std::to_string(id));
+  //std::cout << q.getStr() << std::endl;
+  std::set<State> q0;
+  q0.insert(initial_state_);
+  q0 = EClosure(q0);
+  //q0.setMark(0);
+}

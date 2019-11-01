@@ -19,6 +19,7 @@
 #include <fstream>
 #include <string>
 #include "Nfa.h"
+#include "Dfa.h"
 
 int main (int argc, char *argv[]) {	
   std::ifstream input;
@@ -46,7 +47,9 @@ int main (int argc, char *argv[]) {
   output.open(argv[2]);
   }
   if (input) {
-    Automata test (input);
+    Nfa nfa (input);
+    Dfa dfa;
+    nfa.SubSets(dfa);
     input.close();
   } 
   else std::cout << "Error en la apertura del fichero de entrada\n";
