@@ -79,7 +79,6 @@ class State {
  private:
   std::string state_;
   vector_pair transitions_;
-  bool marked_;
 };
 
 #endif

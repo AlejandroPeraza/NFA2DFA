@@ -37,6 +37,7 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
 
   int count = 1;
   int aux = std::stoi(read[0]);
+ 
   // N+ 1 iterations
   for (int i = 0; i <= aux; i++) {
       alphabet_.push_back(read[i+1][0]);
@@ -44,9 +45,12 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
   
   count += aux + 1;
   aux = std::stoi(read[count]);
+  //std::cout << aux << '\n';
   for (int i = 0; i < aux; i++) {
+    //std::cout << read[count + i + 1] << std::endl;
     State q (read[count + i + 1]);
     states_.push_back(q);
+    //std::cout << states_[i].getStr() << '\n';
   }
 
   count+=aux + 1;
@@ -90,19 +94,21 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
     states_[FindPos(str2)].Insert(token, states_[FindPos(str3)]);
     str2.clear();
     str3.clear();
-  }
+  } 
+  
   /*
   vector_pair v = states_[6].getTransitions();
   for (vector_pair::iterator it = v.begin(); it < v.end(); it++) {
     std::cout << it->first.getStr() << ' ' << it->second << '\n';
   }
-
+  
   for (std::vector<char>::iterator it = alphabet_.begin(); it < alphabet_.end(); it++) {
     std::cout << *it << '\n';
   }
   std::cout << '\n';
   std::cout << initial_state_.getStr()  << '\n';
   std::cout << '\n';
+  
     for (std::vector<State>::iterator it = final_states_.begin(); it < final_states_.end(); it++) {
     std::cout << it->getStr() << '\n';
   }
@@ -115,6 +121,7 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
   std::set<State> T;
   T.insert(states_[5]);
   T.insert(states_[10]);
+
   T = EClosure(T);
   //for (std::set<State>::iterator it = begin(T); it != end(T); it++) {
     //std::cout << it->getStr() << '\n';
@@ -126,6 +133,8 @@ Automata::Automata (std::istream& is) : states_(), initial_state_(), final_state
   T.insert(states_[4]);
   T.insert(states_[7]);
   T = Move(T, 'b');
+
+
   for (std::set<State>::iterator it = begin(T); it != end(T); it++) {
     std::cout << it->getStr() << '\n';
   }
