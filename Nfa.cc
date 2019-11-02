@@ -228,11 +228,17 @@ std::set<State> Nfa::Move (std::set<State> S, char token) {
 }
 
 void Nfa::SubSets (Dfa &DFA) {
-  //int id = 0;
-  //State q (std::to_string(id));
-  //std::cout << q.getStr() << std::endl;
-  std::set<State> q0;
-  q0.insert(initial_state_);
-  q0 = EClosure(q0);
-  //q0.setMark(0);
+  int id = 0;
+  State q (std::to_string(id));
+  std::cout << q.getStr() << std::endl;
+  q.setMark(0);
+  std::vector<State> st;
+  st.push_back(q);
+  //TODO meter el estado en el dy para luego ir viendo si pertenece
+  std::set<State> q_aux;
+  q_aux.insert(initial_state_);
+  q_aux = EClosure(q_aux);
+  for (vector_pair::iterator it = st.begin(); it < st.end(); it++) {
+
+  }
 }
