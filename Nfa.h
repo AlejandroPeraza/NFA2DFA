@@ -78,7 +78,7 @@ class Nfa {
   bool operator< (const State &other) const;
   /**
    */
-  bool isinVector (std::vector<std::pair<std::set<State>, State>>& s, std::set<State>& q);
+  bool isinVector (std::vector<std::pair<std::set<State>, State>> &s, std::set<State> &q, int &pos);
   /**
    */
   int marked (std::vector<std::pair<std::set<State>, State>> &s, int &a);
