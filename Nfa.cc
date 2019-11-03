@@ -227,44 +227,47 @@ std::set<State> Nfa::Move (std::set<State> S, char token) {
   } 
   return moved;
 }
-/*
+
+
+
 void Nfa::SubSets (Dfa &DFA) {
+  Dfa dfa;
   std::vector<std::pair<std::set<State>, State>> states;
   std::vector<std::pair<std::set<State>, State>>::iterator check;
   int id = 0;
-  State q_d (std::to_string(id));
+  State q_d (std::to_string(0));
   std::set<State> q_n;
   // TODO change this
   q_n.insert(states_[FindPos(initial_state_.getStr())]);
   q_n = EClosure(q_n);
-  
   states.push_back(std::make_pair(q_n, q_d));
-
-
   std::set<State> H = EClosure(Move(states[0].first, 'a'));
   std::set<State> z = EClosure(Move(H, 'a'));
+  
   int a = 0;
   while(marked(states, a) != -1) {
     for (std::vector<char>::iterator alph = alphabet_.begin() + 1 ; alph < alphabet_.end(); alph++) {
       std::set<State> H = EClosure(Move(states[a].first, *alph));
-      int pos = 0;
-      if (!isinVector(states, H, pos)) {
+     int pos = 0;
+     isinVector(states, H, pos);
+     int aux = 0;
+     if (pos == 0) aux = id + 1;
+     else aux = pos;
+     State q_aux (std::to_string(aux));
+      if (pos == 0) {
         id++;
-        State q_aux (std::to_string(id));
         q_aux.setMark(false);
         states.push_back(std::make_pair(H, q_aux));
       }
-      // PARA ASIGNAR LAS TRANSICIONES AL ESTADO T, TENGO QUE O PROBAR CON ID-1
-      // O BUSCAR EL SET h EN EL VECTOR Y EN ESA POS, SECOND METER LA TRANSICION
-      //const bool is_in = container.find(element) != container.end();
+      states[a].second.Insert(*alph, q_aux);
     }
   }
   std::vector<std::pair<std::set<State>, State>>::iterator it;
-  for (it = states.begin(); it < states.end(); it++) {
-    std::cout << it->second.getStr();
-  }
+  for (it = states.begin(); it < states.end(); it++)
+    dfa.AddState(it->second, 0);
+  dfa.AddState(states[0].second, 1);
+  dfa.drawDFA(std::cout);
 }
-*/
 
 bool Nfa::isinVector (std::vector<std::pair<std::set<State>, State>>& s, std::set<State>& q, int &pos) {
   for(std::vector<std::pair<std::set<State> , State>>::size_type i = 0; i != s.size(); i++) {
@@ -273,12 +276,6 @@ bool Nfa::isinVector (std::vector<std::pair<std::set<State>, State>>& s, std::se
       return true;
     }
   }
-  /*std::vector<std::pair<std::set<State>, State>>::iterator it;
-  for (it = s.begin(); it < s.end(); it++) {
-    if (it->first == q) {
-      return true;
-    }
-  }*/
   return false;
 }
 
@@ -295,90 +292,88 @@ int Nfa::marked (std::vector<std::pair<std::set<State> , State>> &s, int &a) {
 
 
 
+/*
+  void Nfa::SubSets (Dfa &DFA) {
+    Dfa dfa;
+    std::vector<std::pair<std::set<State>, State>> states;
+    std::vector<std::pair<std::set<State>, State>>::iterator check;
+    int id = 0;
+    State q_d (std::to_string(0));
+    std::set<State> q_n;
+    // TODO change this
+    q_n.insert(states_[FindPos(initial_state_.getStr())]);
+    q_n = EClosure(q_n);
+    
+    states.push_back(std::make_pair(q_n, q_d));
 
-void Nfa::SubSets (Dfa &DFA) {
-  std::vector<std::pair<std::set<State>, State>> states;
-  std::vector<std::pair<std::set<State>, State>>::iterator check;
-  int id = 0;
-  State q_d (std::to_string(id));
-  std::set<State> q_n;
-  // TODO change this
-  q_n.insert(states_[FindPos(initial_state_.getStr())]);
-  q_n = EClosure(q_n);
-  
-  states.push_back(std::make_pair(q_n, q_d));
 
+    std::set<State> H = EClosure(Move(states[0].first, 'a'));
+    std::set<State> z = EClosure(Move(H, 'a'));
 
-  std::set<State> H = EClosure(Move(states[0].first, 'a'));
-  std::set<State> z = EClosure(Move(H, 'a'));
+    
+    for (std::set<State>::iterator h = H.begin(); h != H.end(); h++) {
+        std::cout << h->getStr() << ' ';
+      } std::cout << '\n';
+    
+    for (std::set<State>::iterator h = z.begin(); h != z.end(); h++) {
+        std::cout << h->getStr() << ' ';
+      } std::cout << '\n';
+    
+    State q_aux (std::to_string(1));
+    q_aux.setMark(false);
+    states.push_back(std::make_pair(H, q_aux));
+    if (H == z) std::cout << "virenazo\n";
+    if (isinVector(states, H)) std::cout << "virenazo\n";
+    
+    
+    int a = 0;
+    while(marked(states, a) != -1) {
+      //std::cout << a << '\n';
+      //std::cout << states.size() << ' ' << "skere\n";
+      for (std::vector<char>::iterator alph = alphabet_.begin() + 1 ; alph < alphabet_.end(); alph++) {
+        std::set<State> H = EClosure(Move(states[a].first, *alph));
+        //std::set<State> z = EClosure(Move(H, 'a'));
 
-  /*
-  for (std::set<State>::iterator h = H.begin(); h != H.end(); h++) {
-      std::cout << h->getStr() << ' ';
-    } std::cout << '\n';
-  
-  for (std::set<State>::iterator h = z.begin(); h != z.end(); h++) {
-      std::cout << h->getStr() << ' ';
-    } std::cout << '\n';
-  
-  State q_aux (std::to_string(1));
-  q_aux.setMark(false);
-  states.push_back(std::make_pair(H, q_aux));
-  if (H == z) std::cout << "virenazo\n";
-  if (isinVector(states, H)) std::cout << "virenazo\n";
-  */
-  
-  int a = 0;
-  while(marked(states, a) != -1) {
-    //std::cout << a << '\n';
-    //std::cout << states.size() << ' ' << "skere\n";
-    for (std::vector<char>::iterator alph = alphabet_.begin() + 1 ; alph < alphabet_.end(); alph++) {
-      std::set<State> H = EClosure(Move(states[a].first, *alph));
-      //std::set<State> z = EClosure(Move(H, 'a'));
-
-      /*for (std::set<State>::iterator h = H.begin(); h != H.end(); h++) {
-          std::cout << h->getStr() << ' ';
-        } std::cout << '\n';
+        for (std::set<State>::iterator h = H.begin(); h != H.end(); h++) {
+            std::cout << h->getStr() << ' ';
+          } std::cout << '\n';
+        
+        for (std::set<State>::iterator h = z.begin(); h != z.end(); h++) {
+            std::cout << h->getStr() << ' ';
+          } std::cout << '\n';
+        if (H == z) std::cout << "virenazo\n";
+        
+      int pos = 0;
+      isinVector(states, H, pos);
+      //std::cout << pos << '\n';
+      int aux = 0;
+      if (pos == 0) aux = id + 1;
+      else aux = pos;
+      State q_aux (std::to_string(aux));
+      //std::cout << states[a].second.getStr() << ' ' << q_aux.getStr() << ' ' << *alph <<  '\n';
       
-      for (std::set<State>::iterator h = z.begin(); h != z.end(); h++) {
-          std::cout << h->getStr() << ' ';
-        } std::cout << '\n';
-      if (H == z) std::cout << "virenazo\n";
-      */
-     int pos = 0;
-     isinVector(states, H, pos);
-     //std::cout << pos << '\n';
-     int aux = 0;
-     if (pos == 0) aux = id + 1;
-     else aux = pos;
-     std::cout << states[a].second.getStr() << ' ' << aux << ' ' << *alph <<  '\n';
-      if (pos == 0) {
+        if (pos == 0) {
+          id++;
+          q_aux.setMark(false);
+          //std::cout << states[a].second.getStr() << ' ' << q_aux.getStr() << ' ' << *alph <<  '\n';
+          //std::cout << q_aux.getStr() << '\n';
+          for (std::set<State>::iterator h = H.begin(); h != H.end(); h++) {
+            std::cout << h->getStr() << ' ';
+          } std::cout << '\n';
+          
+          states.push_back(std::make_pair(H, q_aux));
+        }
+        states[a].second.Insert(*alph, q_aux);
         
-        id++;
-        //std::cout << "skerito\n";
-        State q_aux (std::to_string(id));
-        q_aux.setMark(false);
-        //std::cout << states[a].second.getStr() << ' ' << q_aux.getStr() << ' ' << *alph <<  '\n';
-        //std::cout << q_aux.getStr() << '\n';
-        /*for (std::set<State>::iterator h = H.begin(); h != H.end(); h++) {
-          std::cout << h->getStr() << ' ';
-        } std::cout << '\n';
-        */
-        states.push_back(std::make_pair(H, q_aux));
-        
+        // PARA ASIGNAR LAS TRANSICIONES AL ESTADO T, TENGO QUE O PROBAR CON ID-1
+        // O BUSCAR EL SET h EN EL VECTOR Y EN ESA POS, SECOND METER LA TRANSICION
+        //const bool is_in = container.find(element) != container.end();
       }
-
-
-
-
-
-      // PARA ASIGNAR LAS TRANSICIONES AL ESTADO T, TENGO QUE O PROBAR CON ID-1
-      // O BUSCAR EL SET h EN EL VECTOR Y EN ESA POS, SECOND METER LA TRANSICION
-      //const bool is_in = container.find(element) != container.end();
     }
+
+    std::vector<std::pair<std::set<State>, State>>::iterator it;
+    for (it = states.begin(); it < states.end(); it++)
+      dfa.AddState(it->second, 0);
+    dfa.drawDFA(std::cout);
   }
-  /*std::vector<std::pair<std::set<State>, State>>::iterator it;
-  for (it = states.begin(); it < states.end(); it++) {
-    std::cout << it->second.getStr();
-  }*/
-}
+*/

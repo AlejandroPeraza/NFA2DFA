@@ -46,7 +46,9 @@ class Dfa {
    *  @return entero que indica la posición del vector
    */
 //int FindPos (std::string str);
-  
+  /**
+   */
+  void AddState (State q, int mode);
   /** @brief Método que realiza la conversión de los datos del DFA a un archivo
    *  con formato Dot
    *  @param os - fichero en el que se imprime la conversión por referencia

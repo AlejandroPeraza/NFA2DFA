@@ -20,6 +20,7 @@
 
 #include "Dfa.h"
 #include "State.h"
+typedef std::vector<std::pair<State, char>> vector_pair;
 
 Dfa::Dfa() : states_(), initial_state_(), final_states_(), alphabet_() {
 
@@ -31,4 +32,33 @@ Dfa::~Dfa() {
   alphabet_.erase(alphabet_.begin(), alphabet_.end());
 }
 
+void Dfa::AddState (State q, int mode) {
+  switch (mode)
+  {
+  case 0:
+    states_.push_back(q);
+    break;
+  case 1:
+    initial_state_ = q;
+    break;
+  case 2:
+    final_states_.push_back(q);
+    break;
+  default:
+    break;
+  } 
+}
+
 // TODO el drawDfa
+
+std::ostream& Dfa::drawDFA (std::ostream& os) {
+  for (std::vector<State>::iterator it = states_.begin(); it < states_.end(); it++) {
+    os << it->getStr() << '\n';
+    vector_pair tr = it->getTransitions();
+    for (vector_pair::iterator at = tr.begin(); at < tr.end(); at++) {
+      std::cout << at->first.getStr() << ' ' << at->second << '\n';
+    }
+  }
+  std::cout << initial_state_.getStr() << '\n';
+  return os;
+}

@@ -77,8 +77,6 @@ class State {
    *  @param q - un estado, objeto de la clase
    */
   void Insert (char token, State q);
-
-  void addTransition ()
   /** @brief Sobrecarga del operador < para el correcto 
    *  funcionamiento de un set
    *  @param other - un estado, objeto de la clase
