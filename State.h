@@ -71,7 +71,7 @@ class State {
    *  @param state - estado a comparar
    *  @return un booleano que indica si son o no iguales
    */
-  bool Equal (State &state) const;
+  bool Equal (const State &state) const;
   /** @brief Método que inserta un estado en el vector de transiciones
    *  @param token - un char   
    *  @param q - un estado, objeto de la clase
@@ -83,6 +83,9 @@ class State {
    *  @return un booleano que indica si es menor o no
    */
   bool operator< (const State &other) const;
+  /**
+   */
+  bool operator== (const State &other) const;
 
  private:
   std::string state_;

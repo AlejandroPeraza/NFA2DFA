@@ -73,7 +73,17 @@ class Nfa {
    *  @param DFA_states - el conjunto de estados del DFA correspondiente
    */
   void SubSets (Dfa &DFA);
-  
+  /**
+   */
+  bool operator< (const State &other) const;
+  /**
+   */
+  bool isinVector (std::vector<std::pair<std::set<State>, State>>& s, std::set<State>& q);
+  /**
+   */
+  int marked (std::vector<std::pair<std::set<State>, State>> &s, int &a);
+
+
  private:
   std::vector<State> states_;
   State initial_state_;

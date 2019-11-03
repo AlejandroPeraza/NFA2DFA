@@ -66,7 +66,7 @@ State State::Delta (char token) {
   return dead;
 }
 // TODO delete Equal
-bool State::Equal (State &state) const{
+bool State::Equal (const State &state) const{
   if (state_ == state.getStr()) return 1;
   else return 0;
 }
@@ -78,4 +78,8 @@ void State::Insert (char token, State q) {
 // TODO add friend
 bool State::operator< (const State &other) const { 
   return state_ < other.getStr(); 
+}  
+
+bool State::operator== (const State &other) const { 
+  return Equal(other); 
 }  
