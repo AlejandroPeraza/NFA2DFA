@@ -3,19 +3,19 @@
  *  Grado en Ingeniería Informática
  *  Asignatura: Computabilidad y Algoritmia (CyA)
  *  Curso: 2º 
- *  Práctica 4 CyA - Eliminador de comentarios
+ *  Práctica 7 CyA - La construccion de subconjuntos
  *  Autor: Alejandro Peraza González
  *  Correo: alu0101211770@ull.edu.es
- *  Fecha: 16/10/2019
- *  Archivo Automata.cc: Esta es la clase principal y la que inicializa el
- *                       funcionamiento del autómata y requiere de la 
- *                       creación de States, un alfabeto y una matriz
- *                       de transiciones
+ *  Fecha: 05/11/2019
+ *  Archivo Dfa.cc:      En esta clase se almacenan los datos de un dfa
+ *                       al nfa recibido por fichero. Luego, gracias al 
+ *                       método drawDFA se pasan los datos a un archivo 
+ *                       .gv con el formato dot
  *  Referencias: 
  *                       Enunciado de la práctica:
- *                       https://campusvirtual.ull.es/1920/pluginfile.php/166891/mod_assign/introattachment/0/CYA_1920_Practica_4.pdf?forcedownload=1
+ *                       https://campusvirtual.ull.es/1920/pluginfile.php/181073/mod_assign/introattachment/0/CYA_1920_Practica_7.pdf?forcedownload=1
  *  Historial de revisiones
- *                       10/10/2019 - Creación (primera versión) del código
+ *                       30/10/2019 - Creación (primera versión) del código
  */
 
 #include "Dfa.h"
@@ -53,8 +53,6 @@ void Dfa::setAlphabet (std::vector<char> alphabet) {
   alphabet_ = alphabet;
 }
 
-// TODO el drawDfa
-
 std::ostream& Dfa::drawDFA (std::ostream& os) {
   
   os << "digraph DFA {\n  rankdir=LR;\n  size =  \"10 , 4\";\n";
@@ -77,25 +75,5 @@ std::ostream& Dfa::drawDFA (std::ostream& os) {
     }
   }
   os << '}';
-
-/*
-
-  for (std::vector<State>::iterator it = states_.begin(); it < states_.end(); it++) {
-    os << it->getStr() << '\n';
-    vector_pair tr = it->getTransitions();
-    for (vector_pair::iterator at = tr.begin(); at < tr.end(); at++) {
-      os << at->first.getStr() << ' ' << at->second << '\n';
-    }
-  }
-  os << initial_state_.getStr() << '\n';
-  
-
-  for (std::vector<State>::iterator it = final_states_.begin(); it < final_states_.end(); it++) {
-    os << it->getStr() << '\n';
-  }
-   for (std::vector<char>::iterator it = alphabet_.begin(); it < alphabet_.end(); it++) {
-    os << *it << '\n';
-  }
-  */
   return os;
 }

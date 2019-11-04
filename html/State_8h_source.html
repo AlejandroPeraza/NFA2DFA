@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NFA2DFA: Fichero Fuente State.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NFA2DFA
+   </div>
+   <div id="projectbrief">ConversiondeunNFAaunDFAequivalente</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">State.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifndef STATE</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define STATE</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classState.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classState.html">State</a> {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; <span class="keyword">public</span>:</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">typedef</span> std::vector&lt;std::pair&lt;State, char&gt;&gt; vector_pair;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="classState.html#ab91bb1dd5aa6260ab2a456581daf9ec2">State</a> ();</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classState.html#ab91bb1dd5aa6260ab2a456581daf9ec2">State</a> (std::string state);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="classState.html#afab438d92b90dc18d194dbd9c9c8bab3">~State</a> ();</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  std::string <a class="code" href="classState.html#acb82f32f51c4d5db3743a3904b22cc75">getStr</a> () <span class="keyword">const</span>;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classState.html#a5b357108140ecc1442dac9a10fa4b43a">setStr</a> (std::string &amp;str);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classState.html#a47d35b17a579ff3c15989efea2d91398">getMark</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classState.html#af07f99f41c5c3dc6154ccf420cdbbe27">setMark</a>(<span class="keywordtype">bool</span> mark);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  vector_pair getTransitions () <span class="keyword">const</span>;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="classState.html">State</a> <a class="code" href="classState.html#a02357cf169ab1d60222aa97997fecdbd">Delta</a> (<span class="keywordtype">char</span> token);</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classState.html#a890e208099230b4ff3b6bafe215d94d6">Insert</a> (<span class="keywordtype">char</span> token, <a class="code" href="classState.html">State</a> q);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classState.html#a04827418cf8fd791b7f7e7f9a1f23a55">operator&lt; </a>(<span class="keyword">const</span> <a class="code" href="classState.html">State</a> &amp;other) <span class="keyword">const</span>;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classState.html#ab98d310aaceb21737346521c5bc6fc6c">operator== </a>(<span class="keyword">const</span> <a class="code" href="classState.html">State</a> &amp;other) <span class="keyword">const</span>;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; <span class="keyword">private</span>:</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  std::string state_;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  vector_pair transitions_;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">bool</span> marked_;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="classState_html_a04827418cf8fd791b7f7e7f9a1f23a55"><div class="ttname"><a href="classState.html#a04827418cf8fd791b7f7e7f9a1f23a55">State::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const State &amp;other) const</div><div class="ttdoc">Sobrecarga del operador &lt; para el correcto funcionamiento de un set. </div><div class="ttdef"><b>Definition:</b> State.cc:69</div></div>
+<div class="ttc" id="classState_html_acb82f32f51c4d5db3743a3904b22cc75"><div class="ttname"><a href="classState.html#acb82f32f51c4d5db3743a3904b22cc75">State::getStr</a></div><div class="ttdeci">std::string getStr() const</div><div class="ttdoc">Getter del atributo state_. </div><div class="ttdef"><b>Definition:</b> State.cc:36</div></div>
+<div class="ttc" id="classState_html_a890e208099230b4ff3b6bafe215d94d6"><div class="ttname"><a href="classState.html#a890e208099230b4ff3b6bafe215d94d6">State::Insert</a></div><div class="ttdeci">void Insert(char token, State q)</div><div class="ttdoc">Método para comparar si dos estados son iguales. </div><div class="ttdef"><b>Definition:</b> State.cc:65</div></div>
+<div class="ttc" id="classState_html_a02357cf169ab1d60222aa97997fecdbd"><div class="ttname"><a href="classState.html#a02357cf169ab1d60222aa97997fecdbd">State::Delta</a></div><div class="ttdeci">State Delta(char token)</div><div class="ttdoc">Método que devuelve el estado siguiente dado un estado actual y un char. </div><div class="ttdef"><b>Definition:</b> State.cc:56</div></div>
+<div class="ttc" id="classState_html_a5b357108140ecc1442dac9a10fa4b43a"><div class="ttname"><a href="classState.html#a5b357108140ecc1442dac9a10fa4b43a">State::setStr</a></div><div class="ttdeci">void setStr(std::string &amp;str)</div><div class="ttdoc">Setter del atributo state_. </div><div class="ttdef"><b>Definition:</b> State.cc:40</div></div>
+<div class="ttc" id="classState_html"><div class="ttname"><a href="classState.html">State</a></div><div class="ttdoc">Clase empleada para representar cada estado del DFA. </div><div class="ttdef"><b>Definition:</b> State.h:33</div></div>
+<div class="ttc" id="classState_html_ab98d310aaceb21737346521c5bc6fc6c"><div class="ttname"><a href="classState.html#ab98d310aaceb21737346521c5bc6fc6c">State::operator==</a></div><div class="ttdeci">bool operator==(const State &amp;other) const</div><div class="ttdoc">Compara si dos estados son iguales. </div><div class="ttdef"><b>Definition:</b> State.cc:73</div></div>
+<div class="ttc" id="classState_html_a47d35b17a579ff3c15989efea2d91398"><div class="ttname"><a href="classState.html#a47d35b17a579ff3c15989efea2d91398">State::getMark</a></div><div class="ttdeci">bool getMark() const</div><div class="ttdoc">Método que devuelve el atributo marked_. </div><div class="ttdef"><b>Definition:</b> State.cc:44</div></div>
+<div class="ttc" id="classState_html_ab91bb1dd5aa6260ab2a456581daf9ec2"><div class="ttname"><a href="classState.html#ab91bb1dd5aa6260ab2a456581daf9ec2">State::State</a></div><div class="ttdeci">State()</div><div class="ttdoc">Constructor de la clase State por defecto. </div><div class="ttdef"><b>Definition:</b> State.cc:23</div></div>
+<div class="ttc" id="classState_html_af07f99f41c5c3dc6154ccf420cdbbe27"><div class="ttname"><a href="classState.html#af07f99f41c5c3dc6154ccf420cdbbe27">State::setMark</a></div><div class="ttdeci">void setMark(bool mark)</div><div class="ttdoc">Método que mopdiifca el atributo marked_. </div><div class="ttdef"><b>Definition:</b> State.cc:48</div></div>
+<div class="ttc" id="classState_html_afab438d92b90dc18d194dbd9c9c8bab3"><div class="ttname"><a href="classState.html#afab438d92b90dc18d194dbd9c9c8bab3">State::~State</a></div><div class="ttdeci">~State()</div><div class="ttdoc">Destructor que libera la memoria reservada por el vector transitions_. </div><div class="ttdef"><b>Definition:</b> State.cc:32</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

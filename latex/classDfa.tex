@@ -1,0 +1,116 @@
+\hypertarget{classDfa}{}\section{Referencia de la Clase Dfa}
+\label{classDfa}\index{Dfa@{Dfa}}
+
+
+Clase en la que se almacena el dfa equivalente al nfa dado.  
+
+
+
+
+{\ttfamily \#include $<$Dfa.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDfa_a8b4306c41ff0004264f56563e4399992}\label{classDfa_a8b4306c41ff0004264f56563e4399992}} 
+\hyperlink{classDfa_a8b4306c41ff0004264f56563e4399992}{Dfa} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDfa_a2d110a2cc46b2dab6e6f9e901639b0cd}\label{classDfa_a2d110a2cc46b2dab6e6f9e901639b0cd}} 
+\hyperlink{classDfa_a2d110a2cc46b2dab6e6f9e901639b0cd}{$\sim$\+Dfa} ()
+\begin{DoxyCompactList}\small\item\em Destructor de la clase Autómata que libera la memoria reservada por los vectores states\+\_\+, final\+\_\+states\+\_\+ y alphabet\+\_\+. \end{DoxyCompactList}\item 
+void \hyperlink{classDfa_ac15e207ccc689d4a48b4c5a5fdf21b6c}{set\+Alphabet} (std\+::vector$<$ char $>$ alphabet)
+\begin{DoxyCompactList}\small\item\em Setter del atributo alphabet\+\_\+. \end{DoxyCompactList}\item 
+void \hyperlink{classDfa_a31436e55ea182f71b9f2b903b18d4ba5}{Add\+State} (\hyperlink{classState}{State} q, int mode)
+\begin{DoxyCompactList}\small\item\em Método para incluir los estados, tanto los genéricos(mode = 0) como el inicial (mode = 1) y los de aceptación (mode = 2) \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{classDfa_a643ff03f080320dba8d247efb25d70b0}{draw\+D\+FA} (std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Método que realiza la conversión de los datos del D\+FA a un archivo con formato Dot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase en la que se almacena el dfa equivalente al nfa dado. 
+
+Archivo \hyperlink{Dfa_8h_source}{Dfa.\+h}\+: En esta clase se encuentra el método add\+State que sirve para rellenar los vectores de estados states\+\_\+ y final\+\_\+states así como el estado inicial. Por otro lado, con la función draw\+Dfa se imprimen los datos en un archivo de salida con formato dot.
+
+\begin{DoxyAuthor}{Autor}
+Alejandro Peraza González 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+05/11/2019 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Universidad}
+Universidad de La Laguna 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Curso}
+2º de Ingeniería Informática 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Título}
+La construccion de subconjuntos 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Correo }
+\href{mailto:alu0101211770@ull.edu.es}{\tt alu0101211770@ull.\+edu.\+es} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Referencias}
+\href{https://campusvirtual.ull.es/1920/pluginfile.php/181073/mod_assign/introattachment/0/CYA_1920_Practica_7.pdf?forcedownload=1}{\tt https\+://campusvirtual.\+ull.\+es/1920/pluginfile.\+php/181073/mod\+\_\+assign/introattachment/0/\+C\+Y\+A\+\_\+1920\+\_\+\+Practica\+\_\+7.\+pdf?forcedownload=1} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Historial de revisiones}
+30/10/2019 -\/ Creación (primera versión) del código 
+\end{DoxyParagraph}
+
+
+\subsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classDfa_a31436e55ea182f71b9f2b903b18d4ba5}\label{classDfa_a31436e55ea182f71b9f2b903b18d4ba5}} 
+\index{Dfa@{Dfa}!Add\+State@{Add\+State}}
+\index{Add\+State@{Add\+State}!Dfa@{Dfa}}
+\subsubsection{\texorpdfstring{Add\+State()}{AddState()}}
+{\footnotesize\ttfamily void Dfa\+::\+Add\+State (\begin{DoxyParamCaption}\item[{\hyperlink{classState}{State}}]{q,  }\item[{int}]{mode }\end{DoxyParamCaption})}
+
+
+
+Método para incluir los estados, tanto los genéricos(mode = 0) como el inicial (mode = 1) y los de aceptación (mode = 2) 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em q} & -\/ el estado a almacenar \\
+\hline
+{\em mode} & -\/ selecciona dónde se almacenará q \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDfa_a643ff03f080320dba8d247efb25d70b0}\label{classDfa_a643ff03f080320dba8d247efb25d70b0}} 
+\index{Dfa@{Dfa}!draw\+D\+FA@{draw\+D\+FA}}
+\index{draw\+D\+FA@{draw\+D\+FA}!Dfa@{Dfa}}
+\subsubsection{\texorpdfstring{draw\+D\+F\+A()}{drawDFA()}}
+{\footnotesize\ttfamily std\+::ostream \& Dfa\+::draw\+D\+FA (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Método que realiza la conversión de los datos del D\+FA a un archivo con formato Dot. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & -\/ fichero en el que se imprime la conversión por referencia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+se devuelve por referncia el stream 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDfa_ac15e207ccc689d4a48b4c5a5fdf21b6c}\label{classDfa_ac15e207ccc689d4a48b4c5a5fdf21b6c}} 
+\index{Dfa@{Dfa}!set\+Alphabet@{set\+Alphabet}}
+\index{set\+Alphabet@{set\+Alphabet}!Dfa@{Dfa}}
+\subsubsection{\texorpdfstring{set\+Alphabet()}{setAlphabet()}}
+{\footnotesize\ttfamily void Dfa\+::set\+Alphabet (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{alphabet }\end{DoxyParamCaption})}
+
+
+
+Setter del atributo alphabet\+\_\+. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em alphabet} & -\/ un vector de caracteres que conforma el alfabeto \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Dfa.\+h\item 
+Dfa.\+cc\end{DoxyCompactItemize}

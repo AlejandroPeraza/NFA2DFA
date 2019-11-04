@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NFA2DFA: Referencia de la Clase Dfa</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NFA2DFA
+   </div>
+   <div id="projectbrief">ConversiondeunNFAaunDFAequivalente</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="classDfa-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase Dfa</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Clase en la que se almacena el dfa equivalente al nfa dado.  
+ <a href="classDfa.html#details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Dfa_8h_source.html">Dfa.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a8b4306c41ff0004264f56563e4399992"><td class="memItemLeft" align="right" valign="top"><a id="a8b4306c41ff0004264f56563e4399992"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDfa.html#a8b4306c41ff0004264f56563e4399992">Dfa</a> ()</td></tr>
+<tr class="memdesc:a8b4306c41ff0004264f56563e4399992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor por defecto. <br /></td></tr>
+<tr class="separator:a8b4306c41ff0004264f56563e4399992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d110a2cc46b2dab6e6f9e901639b0cd"><td class="memItemLeft" align="right" valign="top"><a id="a2d110a2cc46b2dab6e6f9e901639b0cd"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDfa.html#a2d110a2cc46b2dab6e6f9e901639b0cd">~Dfa</a> ()</td></tr>
+<tr class="memdesc:a2d110a2cc46b2dab6e6f9e901639b0cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor de la clase Autómata que libera la memoria reservada por los vectores states_, final_states_ y alphabet_. <br /></td></tr>
+<tr class="separator:a2d110a2cc46b2dab6e6f9e901639b0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac15e207ccc689d4a48b4c5a5fdf21b6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDfa.html#ac15e207ccc689d4a48b4c5a5fdf21b6c">setAlphabet</a> (std::vector&lt; char &gt; alphabet)</td></tr>
+<tr class="memdesc:ac15e207ccc689d4a48b4c5a5fdf21b6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter del atributo alphabet_.  <a href="#ac15e207ccc689d4a48b4c5a5fdf21b6c">Más...</a><br /></td></tr>
+<tr class="separator:ac15e207ccc689d4a48b4c5a5fdf21b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31436e55ea182f71b9f2b903b18d4ba5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDfa.html#a31436e55ea182f71b9f2b903b18d4ba5">AddState</a> (<a class="el" href="classState.html">State</a> q, int mode)</td></tr>
+<tr class="memdesc:a31436e55ea182f71b9f2b903b18d4ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para incluir los estados, tanto los genéricos(mode = 0) como el inicial (mode = 1) y los de aceptación (mode = 2)  <a href="#a31436e55ea182f71b9f2b903b18d4ba5">Más...</a><br /></td></tr>
+<tr class="separator:a31436e55ea182f71b9f2b903b18d4ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643ff03f080320dba8d247efb25d70b0"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDfa.html#a643ff03f080320dba8d247efb25d70b0">drawDFA</a> (std::ostream &amp;os)</td></tr>
+<tr class="memdesc:a643ff03f080320dba8d247efb25d70b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que realiza la conversión de los datos del DFA a un archivo con formato Dot.  <a href="#a643ff03f080320dba8d247efb25d70b0">Más...</a><br /></td></tr>
+<tr class="separator:a643ff03f080320dba8d247efb25d70b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Clase en la que se almacena el dfa equivalente al nfa dado. </p>
+<p>Archivo <a class="el" href="Dfa_8h_source.html">Dfa.h</a>: En esta clase se encuentra el método addState que sirve para rellenar los vectores de estados states_ y final_states así como el estado inicial. Por otro lado, con la función drawDfa se imprimen los datos en un archivo de salida con formato dot.</p>
+<dl class="section author"><dt>Autor</dt><dd>Alejandro Peraza González </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>05/11/2019 </dd></dl>
+<dl class="section user"><dt>Universidad</dt><dd>Universidad de La Laguna </dd></dl>
+<dl class="section user"><dt>Curso</dt><dd>2º de Ingeniería Informática </dd></dl>
+<dl class="section user"><dt>Título</dt><dd>La construccion de subconjuntos </dd></dl>
+<dl class="section user"><dt>Correo </dt><dd><a href="#" onclick="location.href='mai'+'lto:'+'alu'+'01'+'012'+'11'+'770'+'@u'+'ll.'+'ed'+'u.e'+'s'; return false;">alu01<span style="display: none;">.nosp@m.</span>0121<span style="display: none;">.nosp@m.</span>1770@<span style="display: none;">.nosp@m.</span>ull.<span style="display: none;">.nosp@m.</span>edu.e<span style="display: none;">.nosp@m.</span>s</a> </dd></dl>
+<dl class="section user"><dt>Referencias</dt><dd><a href="https://campusvirtual.ull.es/1920/pluginfile.php/181073/mod_assign/introattachment/0/CYA_1920_Practica_7.pdf?forcedownload=1">https://campusvirtual.ull.es/1920/pluginfile.php/181073/mod_assign/introattachment/0/CYA_1920_Practica_7.pdf?forcedownload=1</a> </dd></dl>
+<dl class="section user"><dt>Historial de revisiones</dt><dd>30/10/2019 - Creación (primera versión) del código </dd></dl>
+</div><h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a id="a31436e55ea182f71b9f2b903b18d4ba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31436e55ea182f71b9f2b903b18d4ba5">&#9670;&nbsp;</a></span>AddState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Dfa::AddState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classState.html">State</a>&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método para incluir los estados, tanto los genéricos(mode = 0) como el inicial (mode = 1) y los de aceptación (mode = 2) </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>- el estado a almacenar </td></tr>
+    <tr><td class="paramname">mode</td><td>- selecciona dónde se almacenará q </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a643ff03f080320dba8d247efb25d70b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a643ff03f080320dba8d247efb25d70b0">&#9670;&nbsp;</a></span>drawDFA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; Dfa::drawDFA </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método que realiza la conversión de los datos del DFA a un archivo con formato Dot. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>- fichero en el que se imprime la conversión por referencia </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>se devuelve por referncia el stream </dd></dl>
+
+</div>
+</div>
+<a id="ac15e207ccc689d4a48b4c5a5fdf21b6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac15e207ccc689d4a48b4c5a5fdf21b6c">&#9670;&nbsp;</a></span>setAlphabet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Dfa::setAlphabet </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; char &gt;&#160;</td>
+          <td class="paramname"><em>alphabet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter del atributo alphabet_. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alphabet</td><td>- un vector de caracteres que conforma el alfabeto </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
+<li><a class="el" href="Dfa_8h_source.html">Dfa.h</a></li>
+<li>Dfa.cc</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

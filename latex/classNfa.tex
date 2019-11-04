@@ -1,0 +1,162 @@
+\hypertarget{classNfa}{}\section{Referencia de la Clase Nfa}
+\label{classNfa}\index{Nfa@{Nfa}}
+
+
+Se crea un N\+FA a partir de los datos leídos en el fichero de entrada y se imprime un D\+FA equivalente en el de salida.  
+
+
+
+
+{\ttfamily \#include $<$Nfa.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNfa_aca6d706a62e9739d7eda1a33c2a8a7c4}{Nfa} (std\+::istream \&is)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase Autómata que lee el contenido de un fichero y crea un D\+FA. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classNfa_a63f59d34c54fbd4be2448f9ff23e2cc8}\label{classNfa_a63f59d34c54fbd4be2448f9ff23e2cc8}} 
+\hyperlink{classNfa_a63f59d34c54fbd4be2448f9ff23e2cc8}{$\sim$\+Nfa} ()
+\begin{DoxyCompactList}\small\item\em Destructor de la clase Autómata que libera la memoria reservada por los vectores states\+\_\+, final\+\_\+states\+\_\+ y alphabet\+\_\+. \end{DoxyCompactList}\item 
+int \hyperlink{classNfa_a23d169f1835db6b72220a941f65641a9}{Find\+Pos} (std\+::string str, std\+::vector$<$ \hyperlink{classState}{State} $>$ v)
+\begin{DoxyCompactList}\small\item\em Método que recorre el vecor states\+\_\+ que contiene los estados y devuelve la posición en la que encuentra la string buscada. \end{DoxyCompactList}\item 
+std\+::set$<$ \hyperlink{classState}{State} $>$ \hyperlink{classNfa_aa013967938ea5093bf27a20edc906752}{E\+Closure} (std\+::set$<$ \hyperlink{classState}{State} $>$ T)
+\begin{DoxyCompactList}\small\item\em Método que obtiene los E-\/clausra estados de un estado. \end{DoxyCompactList}\item 
+std\+::set$<$ \hyperlink{classState}{State} $>$ \hyperlink{classNfa_a13e99ae74bbd1172e9502c5218b24616}{Move} (std\+::set$<$ \hyperlink{classState}{State} $>$ S, char token)
+\begin{DoxyCompactList}\small\item\em Método que devuelve el conjunto de estados que pueden alcanzarse desde el estado S con el símbolo de entrada token. \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{classNfa_a76d0f776ed9fa7d291c387db466369c3}{Sub\+Sets} (\hyperlink{classDfa}{Dfa} \&D\+FA, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Método que aplica el algoritmo de construcción de suconjuntos. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classNfa_a69a998ea2212906f5f4fe202b343d0c5}\label{classNfa_a69a998ea2212906f5f4fe202b343d0c5}} 
+bool {\bfseries isin\+Vector} (std\+::vector$<$ std\+::pair$<$ std\+::set$<$ \hyperlink{classState}{State} $>$, \hyperlink{classState}{State} $>$$>$ \&s, std\+::set$<$ \hyperlink{classState}{State} $>$ \&q, int \&pos)
+\item 
+\mbox{\Hypertarget{classNfa_ade95a77c0d7b86487cf98a3b3e577275}\label{classNfa_ade95a77c0d7b86487cf98a3b3e577275}} 
+int {\bfseries marked} (std\+::vector$<$ std\+::pair$<$ std\+::set$<$ \hyperlink{classState}{State} $>$, \hyperlink{classState}{State} $>$$>$ \&s, int \&a)
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Se crea un N\+FA a partir de los datos leídos en el fichero de entrada y se imprime un D\+FA equivalente en el de salida. 
+
+Archivo \hyperlink{Nfa_8h_source}{Nfa.\+h}\+: Esta es la clase principal y la que inicializa la lectura y creación del \hyperlink{classNfa}{Nfa}, requiere de la creación de los estados, un alfabeto de entrada y las transiciones entre estados. A partir de este \hyperlink{classNfa}{Nfa} se creará un D\+FA equivalente.
+
+\begin{DoxyAuthor}{Autor}
+Alejandro Peraza González 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+05/11/2019 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Universidad}
+Universidad de La Laguna 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Curso}
+2º de Ingeniería Informática 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Título}
+La construccion de subconjuntos 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Correo }
+\href{mailto:alu0101211770@ull.edu.es}{\tt alu0101211770@ull.\+edu.\+es} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Referencias}
+\href{https://campusvirtual.ull.es/1920/pluginfile.php/181073/mod_assign/introattachment/0/CYA_1920_Practica_7.pdf?forcedownload=1}{\tt https\+://campusvirtual.\+ull.\+es/1920/pluginfile.\+php/181073/mod\+\_\+assign/introattachment/0/\+C\+Y\+A\+\_\+1920\+\_\+\+Practica\+\_\+7.\+pdf?forcedownload=1} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Historial de revisiones}
+30/10/2019 -\/ Creación (primera versión) del código 
+\end{DoxyParagraph}
+
+
+\subsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classNfa_aca6d706a62e9739d7eda1a33c2a8a7c4}\label{classNfa_aca6d706a62e9739d7eda1a33c2a8a7c4}} 
+\index{Nfa@{Nfa}!Nfa@{Nfa}}
+\index{Nfa@{Nfa}!Nfa@{Nfa}}
+\subsubsection{\texorpdfstring{Nfa()}{Nfa()}}
+{\footnotesize\ttfamily Nfa\+::\+Nfa (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase Autómata que lee el contenido de un fichero y crea un D\+FA. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em is} & -\/ fichero del que se lee los datos del D\+FA por referencia \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classNfa_aa013967938ea5093bf27a20edc906752}\label{classNfa_aa013967938ea5093bf27a20edc906752}} 
+\index{Nfa@{Nfa}!E\+Closure@{E\+Closure}}
+\index{E\+Closure@{E\+Closure}!Nfa@{Nfa}}
+\subsubsection{\texorpdfstring{E\+Closure()}{EClosure()}}
+{\footnotesize\ttfamily std\+::set$<$ \hyperlink{classState}{State} $>$ Nfa\+::\+E\+Closure (\begin{DoxyParamCaption}\item[{std\+::set$<$ \hyperlink{classState}{State} $>$}]{T }\end{DoxyParamCaption})}
+
+
+
+Método que obtiene los E-\/clausra estados de un estado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em T} & -\/ conjunto de estados sobre el que calcular \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+el conjunto de estados resultante 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNfa_a23d169f1835db6b72220a941f65641a9}\label{classNfa_a23d169f1835db6b72220a941f65641a9}} 
+\index{Nfa@{Nfa}!Find\+Pos@{Find\+Pos}}
+\index{Find\+Pos@{Find\+Pos}!Nfa@{Nfa}}
+\subsubsection{\texorpdfstring{Find\+Pos()}{FindPos()}}
+{\footnotesize\ttfamily int Nfa\+::\+Find\+Pos (\begin{DoxyParamCaption}\item[{std\+::string}]{str,  }\item[{std\+::vector$<$ \hyperlink{classState}{State} $>$}]{v }\end{DoxyParamCaption})}
+
+
+
+Método que recorre el vecor states\+\_\+ que contiene los estados y devuelve la posición en la que encuentra la string buscada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em str} & -\/ string para poder encontrar la posición en el vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+entero que indica la posición del vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNfa_a13e99ae74bbd1172e9502c5218b24616}\label{classNfa_a13e99ae74bbd1172e9502c5218b24616}} 
+\index{Nfa@{Nfa}!Move@{Move}}
+\index{Move@{Move}!Nfa@{Nfa}}
+\subsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily std\+::set$<$ \hyperlink{classState}{State} $>$ Nfa\+::\+Move (\begin{DoxyParamCaption}\item[{std\+::set$<$ \hyperlink{classState}{State} $>$}]{S,  }\item[{char}]{token }\end{DoxyParamCaption})}
+
+
+
+Método que devuelve el conjunto de estados que pueden alcanzarse desde el estado S con el símbolo de entrada token. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em S} & -\/ estado desde el que se analizan las tranisiciones \\
+\hline
+{\em token} & -\/ símbolo de entrada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+conjunto de estados correspondiente 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNfa_a76d0f776ed9fa7d291c387db466369c3}\label{classNfa_a76d0f776ed9fa7d291c387db466369c3}} 
+\index{Nfa@{Nfa}!Sub\+Sets@{Sub\+Sets}}
+\index{Sub\+Sets@{Sub\+Sets}!Nfa@{Nfa}}
+\subsubsection{\texorpdfstring{Sub\+Sets()}{SubSets()}}
+{\footnotesize\ttfamily std\+::ostream \& Nfa\+::\+Sub\+Sets (\begin{DoxyParamCaption}\item[{\hyperlink{classDfa}{Dfa} \&}]{D\+FA,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Método que aplica el algoritmo de construcción de suconjuntos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em D\+F\+A\+\_\+states} & -\/ el conjunto de estados del D\+FA correspondiente \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+Nfa.\+h\item 
+Nfa.\+cc\end{DoxyCompactItemize}

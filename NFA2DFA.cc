@@ -1,20 +1,19 @@
-/*! @mainpage DFA2dot
+/*! @mainpage NFA2DFA
  *  @author Alejandro Peraza González
- *  @date   28/10/2019
+ *  @date   05/11/2019
  *  @par Universidad
  *    Universidad de La Laguna
  *  @par Curso
  *    2º de Ingeniería Informática
  *  @par Título
- *    Autómatas finitos deterministas
+ *    La construccion de subconjuntos
  *  @par Correo 
  *    alu0101211770@ull.edu.es
  *  @par Referencias
- *    https://campusvirtual.ull.es/1920/pluginfile.php/176735/mod_assign/introattachment/0/CYA_1920_Practica_6.pdf?forcedownload=1
+ *    https://campusvirtual.ull.es/1920/pluginfile.php/181073/mod_assign/introattachment/0/CYA_1920_Practica_7.pdf?forcedownload=1
  *  @par Historial de revisiones
- *    10/10/2019 - Creación (primera versión) del código
+ *    30/10/2019 - Creación (primera versión) del código
  */
-
 #include <iostream>
 #include <fstream>
 #include <string>

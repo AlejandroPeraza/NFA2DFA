@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NFA2DFA: Fichero Fuente Dfa.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NFA2DFA
+   </div>
+   <div id="projectbrief">ConversiondeunNFAaunDFAequivalente</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Dfa.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;State.h&quot;</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifndef DFA</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define DFA</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classDfa.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDfa.html">Dfa</a> {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; <span class="keyword">public</span>:</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="classDfa.html#a8b4306c41ff0004264f56563e4399992">Dfa</a> ();</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="classDfa.html#a2d110a2cc46b2dab6e6f9e901639b0cd">~Dfa</a>();</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classDfa.html#ac15e207ccc689d4a48b4c5a5fdf21b6c">setAlphabet</a> (std::vector&lt;char&gt; alphabet);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classDfa.html#a31436e55ea182f71b9f2b903b18d4ba5">AddState</a> (<a class="code" href="classState.html">State</a> q, <span class="keywordtype">int</span> mode);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  std::ostream&amp; <a class="code" href="classDfa.html#a643ff03f080320dba8d247efb25d70b0">drawDFA</a> (std::ostream&amp; os);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; <span class="keyword">private</span>:</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  std::vector&lt;State&gt; states_;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="classState.html">State</a> initial_state_;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  std::vector&lt;State&gt; final_states_;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  std::vector&lt;char&gt; alphabet_;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="classDfa_html_ac15e207ccc689d4a48b4c5a5fdf21b6c"><div class="ttname"><a href="classDfa.html#ac15e207ccc689d4a48b4c5a5fdf21b6c">Dfa::setAlphabet</a></div><div class="ttdeci">void setAlphabet(std::vector&lt; char &gt; alphabet)</div><div class="ttdoc">Setter del atributo alphabet_. </div><div class="ttdef"><b>Definition:</b> Dfa.cc:52</div></div>
+<div class="ttc" id="classDfa_html_a8b4306c41ff0004264f56563e4399992"><div class="ttname"><a href="classDfa.html#a8b4306c41ff0004264f56563e4399992">Dfa::Dfa</a></div><div class="ttdeci">Dfa()</div><div class="ttdoc">Constructor por defecto. </div><div class="ttdef"><b>Definition:</b> Dfa.cc:25</div></div>
+<div class="ttc" id="classState_html"><div class="ttname"><a href="classState.html">State</a></div><div class="ttdoc">Clase empleada para representar cada estado del DFA. </div><div class="ttdef"><b>Definition:</b> State.h:33</div></div>
+<div class="ttc" id="classDfa_html_a2d110a2cc46b2dab6e6f9e901639b0cd"><div class="ttname"><a href="classDfa.html#a2d110a2cc46b2dab6e6f9e901639b0cd">Dfa::~Dfa</a></div><div class="ttdeci">~Dfa()</div><div class="ttdoc">Destructor de la clase Autómata que libera la memoria reservada por los vectores states_, final_states_ y alphabet_. </div><div class="ttdef"><b>Definition:</b> Dfa.cc:29</div></div>
+<div class="ttc" id="classDfa_html_a643ff03f080320dba8d247efb25d70b0"><div class="ttname"><a href="classDfa.html#a643ff03f080320dba8d247efb25d70b0">Dfa::drawDFA</a></div><div class="ttdeci">std::ostream &amp; drawDFA(std::ostream &amp;os)</div><div class="ttdoc">Método que realiza la conversión de los datos del DFA a un archivo con formato Dot. </div><div class="ttdef"><b>Definition:</b> Dfa.cc:56</div></div>
+<div class="ttc" id="classDfa_html"><div class="ttname"><a href="classDfa.html">Dfa</a></div><div class="ttdoc">Clase en la que se almacena el dfa equivalente al nfa dado. </div><div class="ttdef"><b>Definition:</b> Dfa.h:32</div></div>
+<div class="ttc" id="classDfa_html_a31436e55ea182f71b9f2b903b18d4ba5"><div class="ttname"><a href="classDfa.html#a31436e55ea182f71b9f2b903b18d4ba5">Dfa::AddState</a></div><div class="ttdeci">void AddState(State q, int mode)</div><div class="ttdoc">Método para incluir los estados, tanto los genéricos(mode = 0) como el inicial (mode = 1) y los de ac...</div><div class="ttdef"><b>Definition:</b> Dfa.cc:35</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

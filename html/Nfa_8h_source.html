@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NFA2DFA: Fichero Fuente Nfa.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NFA2DFA
+   </div>
+   <div id="projectbrief">ConversiondeunNFAaunDFAequivalente</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Nfa.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;State.h&quot;</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;Dfa.h&quot;</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#ifndef NFA</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define NFA</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classNfa.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classNfa.html">Nfa</a> {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; <span class="keyword">public</span>:</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="classNfa.html#aca6d706a62e9739d7eda1a33c2a8a7c4">Nfa</a> (std::istream&amp; is);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="classNfa.html#a63f59d34c54fbd4be2448f9ff23e2cc8">~Nfa</a>();</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classNfa.html#a23d169f1835db6b72220a941f65641a9">FindPos</a> (std::string str, std::vector&lt;State&gt; v);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  std::set&lt;State&gt; <a class="code" href="classNfa.html#aa013967938ea5093bf27a20edc906752">EClosure</a> (std::set&lt;State&gt; T);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  std::set&lt;State&gt; <a class="code" href="classNfa.html#a13e99ae74bbd1172e9502c5218b24616">Move</a> (std::set&lt;State&gt; S, <span class="keywordtype">char</span> token);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  std::ostream&amp; <a class="code" href="classNfa.html#a76d0f776ed9fa7d291c387db466369c3">SubSets</a> (<a class="code" href="classDfa.html">Dfa</a> &amp;DFA, std::ostream&amp; os);</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">bool</span> isinVector (std::vector&lt;std::pair&lt;std::set&lt;State&gt;, <a class="code" href="classState.html">State</a>&gt;&gt; &amp;s, std::set&lt;State&gt; &amp;q, <span class="keywordtype">int</span> &amp;pos);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">int</span> marked (std::vector&lt;std::pair&lt;std::set&lt;State&gt;, <a class="code" href="classState.html">State</a>&gt;&gt; &amp;s, <span class="keywordtype">int</span> &amp;a);</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; <span class="keyword">private</span>:</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  std::vector&lt;State&gt; states_;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="classState.html">State</a> initial_state_;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  std::vector&lt;State&gt; final_states_;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  std::vector&lt;char&gt; alphabet_;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="classNfa_html_a63f59d34c54fbd4be2448f9ff23e2cc8"><div class="ttname"><a href="classNfa.html#a63f59d34c54fbd4be2448f9ff23e2cc8">Nfa::~Nfa</a></div><div class="ttdeci">~Nfa()</div><div class="ttdoc">Destructor de la clase Autómata que libera la memoria reservada por los vectores states_, final_states_ y alphabet_. </div><div class="ttdef"><b>Definition:</b> Nfa.cc:100</div></div>
+<div class="ttc" id="classNfa_html_a23d169f1835db6b72220a941f65641a9"><div class="ttname"><a href="classNfa.html#a23d169f1835db6b72220a941f65641a9">Nfa::FindPos</a></div><div class="ttdeci">int FindPos(std::string str, std::vector&lt; State &gt; v)</div><div class="ttdoc">Método que recorre el vecor states_ que contiene los estados y devuelve la posición en la que encuent...</div><div class="ttdef"><b>Definition:</b> Nfa.cc:106</div></div>
+<div class="ttc" id="classNfa_html"><div class="ttname"><a href="classNfa.html">Nfa</a></div><div class="ttdoc">Se crea un NFA a partir de los datos leídos en el fichero de entrada y se imprime un DFA equivalente ...</div><div class="ttdef"><b>Definition:</b> Nfa.h:35</div></div>
+<div class="ttc" id="classNfa_html_a13e99ae74bbd1172e9502c5218b24616"><div class="ttname"><a href="classNfa.html#a13e99ae74bbd1172e9502c5218b24616">Nfa::Move</a></div><div class="ttdeci">std::set&lt; State &gt; Move(std::set&lt; State &gt; S, char token)</div><div class="ttdoc">Método que devuelve el conjunto de estados que pueden alcanzarse desde el estado S con el símbolo de ...</div><div class="ttdef"><b>Definition:</b> Nfa.cc:136</div></div>
+<div class="ttc" id="classState_html"><div class="ttname"><a href="classState.html">State</a></div><div class="ttdoc">Clase empleada para representar cada estado del DFA. </div><div class="ttdef"><b>Definition:</b> State.h:33</div></div>
+<div class="ttc" id="classNfa_html_aca6d706a62e9739d7eda1a33c2a8a7c4"><div class="ttname"><a href="classNfa.html#aca6d706a62e9739d7eda1a33c2a8a7c4">Nfa::Nfa</a></div><div class="ttdeci">Nfa(std::istream &amp;is)</div><div class="ttdoc">Constructor de la clase Autómata que lee el contenido de un fichero y crea un DFA. </div><div class="ttdef"><b>Definition:</b> Nfa.cc:29</div></div>
+<div class="ttc" id="classNfa_html_a76d0f776ed9fa7d291c387db466369c3"><div class="ttname"><a href="classNfa.html#a76d0f776ed9fa7d291c387db466369c3">Nfa::SubSets</a></div><div class="ttdeci">std::ostream &amp; SubSets(Dfa &amp;DFA, std::ostream &amp;os)</div><div class="ttdoc">Método que aplica el algoritmo de construcción de suconjuntos. </div><div class="ttdef"><b>Definition:</b> Nfa.cc:161</div></div>
+<div class="ttc" id="classDfa_html"><div class="ttname"><a href="classDfa.html">Dfa</a></div><div class="ttdoc">Clase en la que se almacena el dfa equivalente al nfa dado. </div><div class="ttdef"><b>Definition:</b> Dfa.h:32</div></div>
+<div class="ttc" id="classNfa_html_aa013967938ea5093bf27a20edc906752"><div class="ttname"><a href="classNfa.html#aa013967938ea5093bf27a20edc906752">Nfa::EClosure</a></div><div class="ttdeci">std::set&lt; State &gt; EClosure(std::set&lt; State &gt; T)</div><div class="ttdoc">Método que obtiene los E-clausra estados de un estado. </div><div class="ttdef"><b>Definition:</b> Nfa.cc:113</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

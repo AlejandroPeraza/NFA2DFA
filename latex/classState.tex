@@ -1,0 +1,233 @@
+\hypertarget{classState}{}\section{Referencia de la Clase State}
+\label{classState}\index{State@{State}}
+
+
+Clase empleada para representar cada estado del D\+FA.  
+
+
+
+
+{\ttfamily \#include $<$State.\+h$>$}
+
+\subsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classState_af5f8aae0de8abacc8dbbe5f5901bc3c0}\label{classState_af5f8aae0de8abacc8dbbe5f5901bc3c0}} 
+typedef std\+::vector$<$ std\+::pair$<$ \hyperlink{classState}{State}, char $>$ $>$ {\bfseries vector\+\_\+pair}
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classState_ab91bb1dd5aa6260ab2a456581daf9ec2}\label{classState_ab91bb1dd5aa6260ab2a456581daf9ec2}} 
+\hyperlink{classState_ab91bb1dd5aa6260ab2a456581daf9ec2}{State} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \hyperlink{classState}{State} por defecto. \end{DoxyCompactList}\item 
+\hyperlink{classState_aeb74cd119de80264e758b143d65b19f5}{State} (std\+::string state)
+\begin{DoxyCompactList}\small\item\em Constructor al recibir una string, esta es asignada a la variable state\+\_\+. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classState_afab438d92b90dc18d194dbd9c9c8bab3}\label{classState_afab438d92b90dc18d194dbd9c9c8bab3}} 
+\hyperlink{classState_afab438d92b90dc18d194dbd9c9c8bab3}{$\sim$\+State} ()
+\begin{DoxyCompactList}\small\item\em Destructor que libera la memoria reservada por el vector transitions\+\_\+. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classState_acb82f32f51c4d5db3743a3904b22cc75}{get\+Str} () const
+\begin{DoxyCompactList}\small\item\em Getter del atributo state\+\_\+. \end{DoxyCompactList}\item 
+void \hyperlink{classState_a5b357108140ecc1442dac9a10fa4b43a}{set\+Str} (std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Setter del atributo state\+\_\+. \end{DoxyCompactList}\item 
+bool \hyperlink{classState_a47d35b17a579ff3c15989efea2d91398}{get\+Mark} () const
+\begin{DoxyCompactList}\small\item\em Método que devuelve el atributo marked\+\_\+. \end{DoxyCompactList}\item 
+void \hyperlink{classState_af07f99f41c5c3dc6154ccf420cdbbe27}{set\+Mark} (bool mark)
+\begin{DoxyCompactList}\small\item\em Método que mopdiifca el atributo marked\+\_\+. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classState_af017b8887a998fa922ae114642509860}\label{classState_af017b8887a998fa922ae114642509860}} 
+vector\+\_\+pair {\bfseries get\+Transitions} () const
+\item 
+\hyperlink{classState}{State} \hyperlink{classState_a02357cf169ab1d60222aa97997fecdbd}{Delta} (char token)
+\begin{DoxyCompactList}\small\item\em Método que devuelve el estado siguiente dado un estado actual y un char. \end{DoxyCompactList}\item 
+void \hyperlink{classState_a890e208099230b4ff3b6bafe215d94d6}{Insert} (char token, \hyperlink{classState}{State} q)
+\begin{DoxyCompactList}\small\item\em Método para comparar si dos estados son iguales. \end{DoxyCompactList}\item 
+bool \hyperlink{classState_a04827418cf8fd791b7f7e7f9a1f23a55}{operator$<$} (const \hyperlink{classState}{State} \&other) const
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador $<$ para el correcto funcionamiento de un set. \end{DoxyCompactList}\item 
+bool \hyperlink{classState_ab98d310aaceb21737346521c5bc6fc6c}{operator==} (const \hyperlink{classState}{State} \&other) const
+\begin{DoxyCompactList}\small\item\em Compara si dos estados son iguales. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase empleada para representar cada estado del D\+FA. 
+
+Archivo \hyperlink{State_8h_source}{State.\+h}\+: Clase conformada por un string y un booleano que sirve para saber si un estado está o no marcado, también tiene un vector de pares, dichos pares son un Estado (un objeto de la misma clase) y un char. Dicho vector indica las diversas transiciones de cada estado.
+
+\begin{DoxyAuthor}{Autor}
+Alejandro Peraza González 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+05/11/2019 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Universidad}
+Universidad de La Laguna 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Curso}
+2º de Ingeniería Informática 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Título}
+La construccion de subconjuntos 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Correo }
+\href{mailto:alu0101211770@ull.edu.es}{\tt alu0101211770@ull.\+edu.\+es} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Referencias}
+\href{https://campusvirtual.ull.es/1920/pluginfile.php/181073/mod_assign/introattachment/0/CYA_1920_Practica_7.pdf?forcedownload=1}{\tt https\+://campusvirtual.\+ull.\+es/1920/pluginfile.\+php/181073/mod\+\_\+assign/introattachment/0/\+C\+Y\+A\+\_\+1920\+\_\+\+Practica\+\_\+7.\+pdf?forcedownload=1} 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Historial de revisiones}
+30/10/2019 -\/ Creación (primera versión) del código 
+\end{DoxyParagraph}
+
+
+\subsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classState_aeb74cd119de80264e758b143d65b19f5}\label{classState_aeb74cd119de80264e758b143d65b19f5}} 
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\subsubsection{\texorpdfstring{State()}{State()}}
+{\footnotesize\ttfamily State\+::\+State (\begin{DoxyParamCaption}\item[{std\+::string}]{state }\end{DoxyParamCaption})}
+
+
+
+Constructor al recibir una string, esta es asignada a la variable state\+\_\+. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state} & -\/ identificador de cada estado \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classState_a02357cf169ab1d60222aa97997fecdbd}\label{classState_a02357cf169ab1d60222aa97997fecdbd}} 
+\index{State@{State}!Delta@{Delta}}
+\index{Delta@{Delta}!State@{State}}
+\subsubsection{\texorpdfstring{Delta()}{Delta()}}
+{\footnotesize\ttfamily \hyperlink{classState}{State} State\+::\+Delta (\begin{DoxyParamCaption}\item[{char}]{token }\end{DoxyParamCaption})}
+
+
+
+Método que devuelve el estado siguiente dado un estado actual y un char. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em token} & -\/ un char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un estado siguiente 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classState_a47d35b17a579ff3c15989efea2d91398}\label{classState_a47d35b17a579ff3c15989efea2d91398}} 
+\index{State@{State}!get\+Mark@{get\+Mark}}
+\index{get\+Mark@{get\+Mark}!State@{State}}
+\subsubsection{\texorpdfstring{get\+Mark()}{getMark()}}
+{\footnotesize\ttfamily bool State\+::get\+Mark (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Método que devuelve el atributo marked\+\_\+. 
+
+\begin{DoxyReturn}{Devuelve}
+booleano que indica si el estado está o no marcado 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classState_acb82f32f51c4d5db3743a3904b22cc75}\label{classState_acb82f32f51c4d5db3743a3904b22cc75}} 
+\index{State@{State}!get\+Str@{get\+Str}}
+\index{get\+Str@{get\+Str}!State@{State}}
+\subsubsection{\texorpdfstring{get\+Str()}{getStr()}}
+{\footnotesize\ttfamily std\+::string State\+::get\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter del atributo state\+\_\+. 
+
+\begin{DoxyReturn}{Devuelve}
+string que identifica a cada estado 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classState_a890e208099230b4ff3b6bafe215d94d6}\label{classState_a890e208099230b4ff3b6bafe215d94d6}} 
+\index{State@{State}!Insert@{Insert}}
+\index{Insert@{Insert}!State@{State}}
+\subsubsection{\texorpdfstring{Insert()}{Insert()}}
+{\footnotesize\ttfamily void State\+::\+Insert (\begin{DoxyParamCaption}\item[{char}]{token,  }\item[{\hyperlink{classState}{State}}]{q }\end{DoxyParamCaption})}
+
+
+
+Método para comparar si dos estados son iguales. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state} & -\/ estado a comparar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un booleano que indica si son o no iguales 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classState_a04827418cf8fd791b7f7e7f9a1f23a55}\label{classState_a04827418cf8fd791b7f7e7f9a1f23a55}} 
+\index{State@{State}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!State@{State}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool State\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classState}{State} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Sobrecarga del operador $<$ para el correcto funcionamiento de un set. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & -\/ un estado, objeto de la clase \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un booleano que indica si es menor o no 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classState_ab98d310aaceb21737346521c5bc6fc6c}\label{classState_ab98d310aaceb21737346521c5bc6fc6c}} 
+\index{State@{State}!operator==@{operator==}}
+\index{operator==@{operator==}!State@{State}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool State\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classState}{State} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compara si dos estados son iguales. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state} & -\/ estado a \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+un booleano que indica si son o no iguales 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classState_af07f99f41c5c3dc6154ccf420cdbbe27}\label{classState_af07f99f41c5c3dc6154ccf420cdbbe27}} 
+\index{State@{State}!set\+Mark@{set\+Mark}}
+\index{set\+Mark@{set\+Mark}!State@{State}}
+\subsubsection{\texorpdfstring{set\+Mark()}{setMark()}}
+{\footnotesize\ttfamily void State\+::set\+Mark (\begin{DoxyParamCaption}\item[{bool}]{mark }\end{DoxyParamCaption})}
+
+
+
+Método que mopdiifca el atributo marked\+\_\+. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em mark} & -\/ 1 ó 0 para marcar o desmarcar el estado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classState_a5b357108140ecc1442dac9a10fa4b43a}\label{classState_a5b357108140ecc1442dac9a10fa4b43a}} 
+\index{State@{State}!set\+Str@{set\+Str}}
+\index{set\+Str@{set\+Str}!State@{State}}
+\subsubsection{\texorpdfstring{set\+Str()}{setStr()}}
+{\footnotesize\ttfamily void State\+::set\+Str (\begin{DoxyParamCaption}\item[{std\+::string \&}]{str }\end{DoxyParamCaption})}
+
+
+
+Setter del atributo state\+\_\+. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em str} & -\/ una string que modifica el valor de state\+\_\+ \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+State.\+h\item 
+State.\+cc\end{DoxyCompactItemize}

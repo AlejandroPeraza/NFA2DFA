@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NFA2DFA: Referencia de la Clase Nfa</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NFA2DFA
+   </div>
+   <div id="projectbrief">ConversiondeunNFAaunDFAequivalente</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="classNfa-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase Nfa</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Se crea un NFA a partir de los datos leídos en el fichero de entrada y se imprime un DFA equivalente en el de salida.  
+ <a href="classNfa.html#details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Nfa_8h_source.html">Nfa.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:aca6d706a62e9739d7eda1a33c2a8a7c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNfa.html#aca6d706a62e9739d7eda1a33c2a8a7c4">Nfa</a> (std::istream &amp;is)</td></tr>
+<tr class="memdesc:aca6d706a62e9739d7eda1a33c2a8a7c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor de la clase Autómata que lee el contenido de un fichero y crea un DFA.  <a href="#aca6d706a62e9739d7eda1a33c2a8a7c4">Más...</a><br /></td></tr>
+<tr class="separator:aca6d706a62e9739d7eda1a33c2a8a7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63f59d34c54fbd4be2448f9ff23e2cc8"><td class="memItemLeft" align="right" valign="top"><a id="a63f59d34c54fbd4be2448f9ff23e2cc8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNfa.html#a63f59d34c54fbd4be2448f9ff23e2cc8">~Nfa</a> ()</td></tr>
+<tr class="memdesc:a63f59d34c54fbd4be2448f9ff23e2cc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor de la clase Autómata que libera la memoria reservada por los vectores states_, final_states_ y alphabet_. <br /></td></tr>
+<tr class="separator:a63f59d34c54fbd4be2448f9ff23e2cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23d169f1835db6b72220a941f65641a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNfa.html#a23d169f1835db6b72220a941f65641a9">FindPos</a> (std::string str, std::vector&lt; <a class="el" href="classState.html">State</a> &gt; v)</td></tr>
+<tr class="memdesc:a23d169f1835db6b72220a941f65641a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que recorre el vecor states_ que contiene los estados y devuelve la posición en la que encuentra la string buscada.  <a href="#a23d169f1835db6b72220a941f65641a9">Más...</a><br /></td></tr>
+<tr class="separator:a23d169f1835db6b72220a941f65641a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa013967938ea5093bf27a20edc906752"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="classState.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNfa.html#aa013967938ea5093bf27a20edc906752">EClosure</a> (std::set&lt; <a class="el" href="classState.html">State</a> &gt; T)</td></tr>
+<tr class="memdesc:aa013967938ea5093bf27a20edc906752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que obtiene los E-clausra estados de un estado.  <a href="#aa013967938ea5093bf27a20edc906752">Más...</a><br /></td></tr>
+<tr class="separator:aa013967938ea5093bf27a20edc906752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13e99ae74bbd1172e9502c5218b24616"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="classState.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNfa.html#a13e99ae74bbd1172e9502c5218b24616">Move</a> (std::set&lt; <a class="el" href="classState.html">State</a> &gt; S, char token)</td></tr>
+<tr class="memdesc:a13e99ae74bbd1172e9502c5218b24616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que devuelve el conjunto de estados que pueden alcanzarse desde el estado S con el símbolo de entrada token.  <a href="#a13e99ae74bbd1172e9502c5218b24616">Más...</a><br /></td></tr>
+<tr class="separator:a13e99ae74bbd1172e9502c5218b24616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d0f776ed9fa7d291c387db466369c3"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNfa.html#a76d0f776ed9fa7d291c387db466369c3">SubSets</a> (<a class="el" href="classDfa.html">Dfa</a> &amp;DFA, std::ostream &amp;os)</td></tr>
+<tr class="memdesc:a76d0f776ed9fa7d291c387db466369c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que aplica el algoritmo de construcción de suconjuntos.  <a href="#a76d0f776ed9fa7d291c387db466369c3">Más...</a><br /></td></tr>
+<tr class="separator:a76d0f776ed9fa7d291c387db466369c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69a998ea2212906f5f4fe202b343d0c5"><td class="memItemLeft" align="right" valign="top"><a id="a69a998ea2212906f5f4fe202b343d0c5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isinVector</b> (std::vector&lt; std::pair&lt; std::set&lt; <a class="el" href="classState.html">State</a> &gt;, <a class="el" href="classState.html">State</a> &gt;&gt; &amp;s, std::set&lt; <a class="el" href="classState.html">State</a> &gt; &amp;q, int &amp;pos)</td></tr>
+<tr class="separator:a69a998ea2212906f5f4fe202b343d0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade95a77c0d7b86487cf98a3b3e577275"><td class="memItemLeft" align="right" valign="top"><a id="ade95a77c0d7b86487cf98a3b3e577275"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>marked</b> (std::vector&lt; std::pair&lt; std::set&lt; <a class="el" href="classState.html">State</a> &gt;, <a class="el" href="classState.html">State</a> &gt;&gt; &amp;s, int &amp;a)</td></tr>
+<tr class="separator:ade95a77c0d7b86487cf98a3b3e577275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Se crea un NFA a partir de los datos leídos en el fichero de entrada y se imprime un DFA equivalente en el de salida. </p>
+<p>Archivo <a class="el" href="Nfa_8h_source.html">Nfa.h</a>: Esta es la clase principal y la que inicializa la lectura y creación del <a class="el" href="classNfa.html" title="Se crea un NFA a partir de los datos leídos en el fichero de entrada y se imprime un DFA equivalente ...">Nfa</a>, requiere de la creación de los estados, un alfabeto de entrada y las transiciones entre estados. A partir de este <a class="el" href="classNfa.html" title="Se crea un NFA a partir de los datos leídos en el fichero de entrada y se imprime un DFA equivalente ...">Nfa</a> se creará un DFA equivalente.</p>
+<dl class="section author"><dt>Autor</dt><dd>Alejandro Peraza González </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>05/11/2019 </dd></dl>
+<dl class="section user"><dt>Universidad</dt><dd>Universidad de La Laguna </dd></dl>
+<dl class="section user"><dt>Curso</dt><dd>2º de Ingeniería Informática </dd></dl>
+<dl class="section user"><dt>Título</dt><dd>La construccion de subconjuntos </dd></dl>
+<dl class="section user"><dt>Correo </dt><dd><a href="#" onclick="location.href='mai'+'lto:'+'alu'+'01'+'012'+'11'+'770'+'@u'+'ll.'+'ed'+'u.e'+'s'; return false;">alu01<span style="display: none;">.nosp@m.</span>0121<span style="display: none;">.nosp@m.</span>1770@<span style="display: none;">.nosp@m.</span>ull.<span style="display: none;">.nosp@m.</span>edu.e<span style="display: none;">.nosp@m.</span>s</a> </dd></dl>
+<dl class="section user"><dt>Referencias</dt><dd><a href="https://campusvirtual.ull.es/1920/pluginfile.php/181073/mod_assign/introattachment/0/CYA_1920_Practica_7.pdf?forcedownload=1">https://campusvirtual.ull.es/1920/pluginfile.php/181073/mod_assign/introattachment/0/CYA_1920_Practica_7.pdf?forcedownload=1</a> </dd></dl>
+<dl class="section user"><dt>Historial de revisiones</dt><dd>30/10/2019 - Creación (primera versión) del código </dd></dl>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a id="aca6d706a62e9739d7eda1a33c2a8a7c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca6d706a62e9739d7eda1a33c2a8a7c4">&#9670;&nbsp;</a></span>Nfa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Nfa::Nfa </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>is</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor de la clase Autómata que lee el contenido de un fichero y crea un DFA. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is</td><td>- fichero del que se lee los datos del DFA por referencia </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a id="aa013967938ea5093bf27a20edc906752"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa013967938ea5093bf27a20edc906752">&#9670;&nbsp;</a></span>EClosure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; <a class="el" href="classState.html">State</a> &gt; Nfa::EClosure </td>
+          <td>(</td>
+          <td class="paramtype">std::set&lt; <a class="el" href="classState.html">State</a> &gt;&#160;</td>
+          <td class="paramname"><em>T</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método que obtiene los E-clausra estados de un estado. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>- conjunto de estados sobre el que calcular </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>el conjunto de estados resultante </dd></dl>
+
+</div>
+</div>
+<a id="a23d169f1835db6b72220a941f65641a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23d169f1835db6b72220a941f65641a9">&#9670;&nbsp;</a></span>FindPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Nfa::FindPos </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classState.html">State</a> &gt;&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método que recorre el vecor states_ que contiene los estados y devuelve la posición en la que encuentra la string buscada. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>- string para poder encontrar la posición en el vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>entero que indica la posición del vector </dd></dl>
+
+</div>
+</div>
+<a id="a13e99ae74bbd1172e9502c5218b24616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13e99ae74bbd1172e9502c5218b24616">&#9670;&nbsp;</a></span>Move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; <a class="el" href="classState.html">State</a> &gt; Nfa::Move </td>
+          <td>(</td>
+          <td class="paramtype">std::set&lt; <a class="el" href="classState.html">State</a> &gt;&#160;</td>
+          <td class="paramname"><em>S</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>token</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método que devuelve el conjunto de estados que pueden alcanzarse desde el estado S con el símbolo de entrada token. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">S</td><td>- estado desde el que se analizan las tranisiciones </td></tr>
+    <tr><td class="paramname">token</td><td>- símbolo de entrada </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>conjunto de estados correspondiente </dd></dl>
+
+</div>
+</div>
+<a id="a76d0f776ed9fa7d291c387db466369c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76d0f776ed9fa7d291c387db466369c3">&#9670;&nbsp;</a></span>SubSets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; Nfa::SubSets </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDfa.html">Dfa</a> &amp;&#160;</td>
+          <td class="paramname"><em>DFA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método que aplica el algoritmo de construcción de suconjuntos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">DFA_states</td><td>- el conjunto de estados del DFA correspondiente </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
+<li><a class="el" href="Nfa_8h_source.html">Nfa.h</a></li>
+<li>Nfa.cc</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
