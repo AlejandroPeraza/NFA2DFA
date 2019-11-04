@@ -2,3 +2,5 @@
 .vscode/c_cpp_properties.json
 *.o
 .vscode/settings.json
+DFA2dot
+input.dfa
