@@ -49,7 +49,7 @@ class Nfa {
    *  @param str - string para poder encontrar la posición en el vector 
    *  @return entero que indica la posición del vector
    */
-  int FindPos (std::string str);
+  int FindPos (std::string str, std::vector<State> v);
 
   /** @brief Método que realiza la conversión de los datos del DFA a un archivo
    *  con formato Dot

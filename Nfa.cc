@@ -89,7 +89,8 @@ Nfa::Nfa (std::istream& is) : states_(), initial_state_(), final_states_(), alph
         }
       }
     }
-    states_[FindPos(str2)].Insert(token, states_[FindPos(str3)]);
+    //TODO 80
+    states_[FindPos(str2, states_)].Insert(token, states_[FindPos(str3, states_)]);
     str2.clear();
     str3.clear();
   } 
@@ -149,9 +150,9 @@ Nfa::~Nfa() {
   alphabet_.erase(alphabet_.begin(), alphabet_.end());
 }
 
-int Nfa::FindPos (std::string str) {
-    for (std::size_t i = 0; i < states_.size(); i++){
-      if (states_[i].getStr() == str) return i;
+int Nfa::FindPos (std::string str, std::vector<State> v) {
+    for (std::size_t i = 0; i < v.size(); i++) {
+      if (v[i].getStr() == str) return i;
     }
   return -1;
 }
@@ -194,7 +195,7 @@ std::set<State> Nfa::EClosure (std::set<State> T) {
     for (vector_pair::iterator it = tr.begin(); it < tr.end(); it++) {
       if (it->second == alphabet_[0] ) {
         if (!epsilon_closure.count(it->first)) {
-          State aux = states_[FindPos(it->first.getStr())];
+          State aux = states_[FindPos(it->first.getStr(), states_)];
           epsilon_closure.insert(aux);;
           cl_stack.push(aux);
         }
@@ -219,7 +220,7 @@ std::set<State> Nfa::Move (std::set<State> S, char token) {
     for (vector_pair::iterator it = tr.begin(); it < tr.end(); it++) {
       if (it->second == token) {
         if (!moved.count(it->first)) {
-          State aux_state = states_[FindPos(it->first.getStr())];
+          State aux_state = states_[FindPos(it->first.getStr(), states_)];
           moved.insert(aux_state);
         }
       }
@@ -238,7 +239,7 @@ void Nfa::SubSets (Dfa &DFA) {
   State q_d (std::to_string(0));
   std::set<State> q_n;
   // TODO change this
-  q_n.insert(states_[FindPos(initial_state_.getStr())]);
+  q_n.insert(states_[FindPos(initial_state_.getStr(), states_)]);
   q_n = EClosure(q_n);
   states.push_back(std::make_pair(q_n, q_d));
   std::set<State> H = EClosure(Move(states[0].first, 'a'));
@@ -263,8 +264,14 @@ void Nfa::SubSets (Dfa &DFA) {
     }
   }
   std::vector<std::pair<std::set<State>, State>>::iterator it;
-  for (it = states.begin(); it < states.end(); it++)
+  for (it = states.begin(); it < states.end(); it++) {
+    for (std::set<State>::iterator it2 = it->first.begin(); it2 != it->first.end(); it2++) {
+      if (FindPos(it2->getStr(), final_states_) != -1) {
+        dfa.AddState(it->second, 2);
+      }
+    }
     dfa.AddState(it->second, 0);
+  }
   dfa.AddState(states[0].second, 1);
   dfa.drawDFA(std::cout);
 }

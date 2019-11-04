@@ -60,5 +60,10 @@ std::ostream& Dfa::drawDFA (std::ostream& os) {
     }
   }
   std::cout << initial_state_.getStr() << '\n';
+  
+
+  for (std::vector<State>::iterator it = final_states_.begin(); it < final_states_.end(); it++) {
+    std::cout << it->getStr() << '\n';
+  }
   return os;
 }
