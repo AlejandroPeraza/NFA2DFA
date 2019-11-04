@@ -50,8 +50,16 @@ class State {
    *  @param str - una string que modifica el valor de state_  
    */
   void setStr (std::string &str);
-  /**
+  
+  /** @brief Método que devuelve el atributo marked_
+   *  @return booleano que indica si el estado está o no marcado
    */
+  bool getMark() const;
+  /** @brief Método que mopdiifca el atributo marked_
+   *  @param mark - 1 ó 0 para marcar o desmarcar el estado
+   */
+  void setMark(bool mark);
+  //TODO 
   vector_pair getTransitions () const;
   /** @brief Método que devuelve el estado siguiente dado un estado
    *  actual y un char
@@ -63,22 +71,26 @@ class State {
    *  @param state - estado a comparar
    *  @return un booleano que indica si son o no iguales
    */
-  bool Equal (State &state) const;
+  bool Equal (const State &state) const;
   /** @brief Método que inserta un estado en el vector de transiciones
    *  @param token - un char   
    *  @param q - un estado, objeto de la clase
    */
-  void Insert(char token, State q);
+  void Insert (char token, State q);
   /** @brief Sobrecarga del operador < para el correcto 
    *  funcionamiento de un set
    *  @param other - un estado, objeto de la clase
    *  @return un booleano que indica si es menor o no
    */
   bool operator< (const State &other) const;
+  /**
+   */
+  bool operator== (const State &other) const;
 
  private:
   std::string state_;
   vector_pair transitions_;
+  bool marked_;
 };
 
 #endif

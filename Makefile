@@ -2,9 +2,9 @@ CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -pedantic -std=c++17 -g -fsanitize=address
 LDFLAGS =  -fsanitize=address
 
-SRC = Automata.cc DFA2dot.cc State.cc
+SRC = Dfa.cc Nfa.cc NFA2DFA.cc State.cc
 OBJ = $(SRC:.cc=.o)
-EXEC = DFA2dot
+EXEC = NFA2DFA
 
 all: $(EXEC)
 

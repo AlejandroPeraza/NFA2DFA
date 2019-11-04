@@ -22,12 +22,13 @@
 
 typedef std::vector<std::pair<State, char>> vector_pair;
 
-State::State () : state_(), transitions_() {
-
+State::State () : state_(), transitions_(), marked_() {
+  marked_ = 0;
 }
 
-State::State (std::string state) : state_(), transitions_() {
+State::State (std::string state) : state_(), transitions_(), marked_() {
   state_ = state;
+  marked_ = 0;
 }
 
 State::~State () {
@@ -41,6 +42,15 @@ std::string State::getStr () const {
 void State::setStr (std::string &str) {
   state_ = str;
 }
+
+bool State::getMark() const {
+  return marked_;
+}
+
+void State::setMark(bool mark) {
+  marked_ = mark;
+}
+
 
 vector_pair State::getTransitions () const {
   return transitions_;
@@ -56,7 +66,7 @@ State State::Delta (char token) {
   return dead;
 }
 // TODO delete Equal
-bool State::Equal (State &state) const{
+bool State::Equal (const State &state) const{
   if (state_ == state.getStr()) return 1;
   else return 0;
 }
@@ -68,4 +78,8 @@ void State::Insert (char token, State q) {
 // TODO add friend
 bool State::operator< (const State &other) const { 
   return state_ < other.getStr(); 
+}  
+
+bool State::operator== (const State &other) const { 
+  return Equal(other); 
 }  

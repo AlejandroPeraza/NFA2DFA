@@ -24,43 +24,37 @@
 
 #include <iostream>
 #include <vector>
-#include <set>
 #include "State.h"
 
-#ifndef AUTOMATA
-#define AUTOMATA
+#ifndef DFA
+#define DFA
 
-class Automata {
+class Dfa {
  public:
-  /** @brief Constructor de la clase Autómata que lee el contenido de un fichero
-   *  y crea un DFA 
-   *  @param is - fichero del que se lee los datos del DFA por referencia
+  /** @brief Constructor por defecto
    */
-  Automata (std::istream& is);
+  Dfa ();
 
   /** @brief Destructor de la clase Autómata que libera la memoria reservada por
    *  los vectores states_, final_states_ y alphabet_ 
    */
-  ~Automata();
-
+  ~Dfa();
+  
   /** @brief Método que recorre el vecor states_ que contiene los estados
    *  y devuelve la posición en la que encuentra la string buscada
    *  @param str - string para poder encontrar la posición en el vector 
    *  @return entero que indica la posición del vector
    */
-  int FindPos (std::string str);
-
+//int FindPos (std::string str);
+  /**
+   */
+  void AddState (State q, int mode);
   /** @brief Método que realiza la conversión de los datos del DFA a un archivo
    *  con formato Dot
    *  @param os - fichero en el que se imprime la conversión por referencia
    *  @return se devuelve por referncia el stream
    */
-  std::ostream& Dot (std::ostream& os);
-  /** @brief Método  que obtiene los E-clausra estados de un estado
-   *  @param T - conjunto de estados sobre el que calcular
-   *  @return el conjunto de estados resultante
-   */
-  std::set<State> EClosure (std::set<State> T);
+  std::ostream& drawDFA (std::ostream& os);
 
  private:
   std::vector<State> states_;
