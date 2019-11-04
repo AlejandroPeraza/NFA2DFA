@@ -156,7 +156,7 @@ int Nfa::FindPos (std::string str, std::vector<State> v) {
     }
   return -1;
 }
-
+/*
 std::ostream& Nfa::Dot (std::ostream& os) {
   os << "digraph DFA {\n  rankdir=LR;\n  size =  \"10 , 4\";\n";
   os << "  d2tstyleonly = true;\n  node [shape = none]; \" \";\n";
@@ -180,6 +180,7 @@ std::ostream& Nfa::Dot (std::ostream& os) {
   os << '}';
   return os;
 }
+*/
 
 std::set<State> Nfa::EClosure (std::set<State> T) {
   std::stack<State> cl_stack;
@@ -231,7 +232,7 @@ std::set<State> Nfa::Move (std::set<State> S, char token) {
 
 
 
-void Nfa::SubSets (Dfa &DFA) {
+std::ostream& Nfa::SubSets (Dfa &DFA, std::ostream& os) {
   Dfa dfa;
   std::vector<std::pair<std::set<State>, State>> states;
   std::vector<std::pair<std::set<State>, State>>::iterator check;
@@ -273,7 +274,11 @@ void Nfa::SubSets (Dfa &DFA) {
     dfa.AddState(it->second, 0);
   }
   dfa.AddState(states[0].second, 1);
-  dfa.drawDFA(std::cout);
+  std::vector<char> alphabet = alphabet_;
+  alphabet.erase(alphabet.begin());
+  dfa.setAlphabet(alphabet);
+  dfa.drawDFA(os);
+  return os;
 }
 
 bool Nfa::isinVector (std::vector<std::pair<std::set<State>, State>>& s, std::set<State>& q, int &pos) {

@@ -56,7 +56,7 @@ class Nfa {
    *  @param os - fichero en el que se imprime la conversión por referencia
    *  @return se devuelve por referncia el stream
    */
-  std::ostream& Dot (std::ostream& os);
+//std::ostream& Dot (std::ostream& os);
   /** @brief Método  que obtiene los E-clausra estados de un estado
    *  @param T - conjunto de estados sobre el que calcular
    *  @return el conjunto de estados resultante
@@ -72,7 +72,7 @@ class Nfa {
   /** @brief Método que aplica el algoritmo de construcción de suconjuntos
    *  @param DFA_states - el conjunto de estados del DFA correspondiente
    */
-  void SubSets (Dfa &DFA);
+  std::ostream& SubSets (Dfa &DFA, std::ostream& os);
   /**
    */
   bool operator< (const State &other) const;

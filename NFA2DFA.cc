@@ -49,7 +49,8 @@ int main (int argc, char *argv[]) {
   if (input) {
     Nfa nfa (input);
     Dfa dfa;
-    nfa.SubSets(dfa);
+    nfa.SubSets(dfa, output);
+    
     input.close();
   } 
   else std::cout << "Error en la apertura del fichero de entrada\n";

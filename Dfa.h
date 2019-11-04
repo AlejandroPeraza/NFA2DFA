@@ -49,6 +49,9 @@ class Dfa {
   /**
    */
   void AddState (State q, int mode);
+  /**
+   */
+  void setAlphabet (std::vector<char> alphabet);
   /** @brief Método que realiza la conversión de los datos del DFA a un archivo
    *  con formato Dot
    *  @param os - fichero en el que se imprime la conversión por referencia
